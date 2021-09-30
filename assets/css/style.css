@@ -1,0 +1,25 @@
+/*Global styles*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#game {
+    margin: 40px auto;
+    display: grid;
+    width: 411px;
+    height: 411px;
+    grid-template: repeat(10, 40px) / repeat(10, 40px);
+    background: #000;
+    gap: 1px;
+    border: 1px solid black;
+}
+
+#game div {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Indie Flower', cursive;
+}
