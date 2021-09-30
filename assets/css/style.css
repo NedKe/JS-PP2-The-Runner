@@ -39,6 +39,10 @@
     font-size: 3.2rem;
 }
 
+body>div:nth-child(2) {
+    margin-left: 45%;
+}
+
 div>p {
     font-family: 'Indie Flower', cursive;
 }
