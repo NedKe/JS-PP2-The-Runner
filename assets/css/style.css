@@ -38,3 +38,7 @@
     height: 100px;
     font-size: 3.2rem;
 }
+
+div>p {
+    font-family: 'Indie Flower', cursive;
+}
