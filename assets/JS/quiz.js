@@ -1,3 +1,21 @@
+const increases = {
+    3: {
+        value: 2,
+        type: "green",
+    },
+    8: {
+        value: -6,
+        type: "red",
+    },
+    53: {
+        value: 3,
+        type: "green",
+    },
+    85: {
+        value: -8,
+        type: "red",
+    }
+}
 const quiz = {
     4: {
         question: "What is the sum of 4 and 5?",
