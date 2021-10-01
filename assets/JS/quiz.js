@@ -1,10 +1,10 @@
-/*const quiz = {
+const quiz = {
     4: {
-        question: "What is the sum of 4 and 5 ?",
+        question: "What is the sum of 4 and 5?",
         multipleAnswers: {
             a: "6",
             b: "1",
-            c: "3"
+            c: "3",
             d: "9"
         },
         rightAnswer: 9,
@@ -14,7 +14,7 @@
         multipleAnswers: {
             a: "6",
             b: "1",
-            c: "3"
+            c: "3",
             d: "9"
         },
         rightAnswer: 9,
@@ -24,7 +24,7 @@
         multipleAnswers: {
             a: "6",
             b: "1",
-            c: "3"
+            c: "3",
             d: "9"
         },
         rightAnswer: 9,
@@ -34,7 +34,7 @@
         multipleAnswers: {
             a: "6",
             b: "1",
-            c: "3"
+            c: "3",
             d: "9"
         },
         rightAnswer: 9,
@@ -44,7 +44,7 @@
         multipleAnswers: {
             a: "6",
             b: "1",
-            c: "3"
+            c: "3",
             d: "9"
         },
         rightAnswer: 9,
@@ -54,7 +54,7 @@
         multipleAnswers: {
             a: "6",
             b: "1",
-            c: "3"
+            c: "3",
             d: "9"
         },
         rightAnswer: 9,
@@ -64,7 +64,7 @@
         multipleAnswers: {
             a: "6",
             b: "1",
-            c: "3"
+            c: "3",
             d: "9"
         },
         rightAnswer: 9,
@@ -75,7 +75,7 @@
         multipleAnswers: {
             a: "6",
             b: "1",
-            c: "3"
+            c: "3",
             d: "9"
         },
         rightAnswer: 9,
@@ -85,7 +85,7 @@
         multipleAnswers: {
             a: "6",
             b: "1",
-            c: "3"
+            c: "3",
             d: "9"
         },
         rightAnswer: 9,
@@ -95,7 +95,7 @@
         multipleAnswers: {
             a: "6",
             b: "1",
-            c: "3"
+            c: "3",
             d: "9"
         },
         rightAnswer: 9,
@@ -105,7 +105,7 @@
         multipleAnswers: {
             a: "6",
             b: "1",
-            c: "3"
+            c: "3",
             d: "9"
         },
         rightAnswer: 9,
@@ -115,7 +115,7 @@
         multipleAnswers: {
             a: "6",
             b: "1",
-            c: "3"
+            c: "3",
             d: "9"
         },
         rightAnswer: 9,
@@ -125,7 +125,7 @@
         multipleAnswers: {
             a: "6",
             b: "1",
-            c: "3"
+            c: "3",
             d: "9"
         },
         rightAnswer: 9,
@@ -135,9 +135,9 @@
         multipleAnswers: {
             a: "6",
             b: "1",
-            c: "3"
+            c: "3",
             d: "9"
         },
         rightAnswer: 9,
     },
-}*/
+}
