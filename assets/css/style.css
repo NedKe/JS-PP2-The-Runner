@@ -34,7 +34,12 @@
 #dice {
     border: none;
     background-color: white;
+    margin-left: 45%;
+}
+
+#dice~div {
     font-family: 'Indie Flower', cursive;
-    font-size: 2rem;
     margin-left: 40%;
+    margin-top: 20px;
+    font-size: 2rem;
 }
