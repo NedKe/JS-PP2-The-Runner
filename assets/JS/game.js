@@ -15,9 +15,16 @@ const blocks = document.querySelectorAll('#game > div');
 //     currentPosition += 5;
 //     blocks[currentPosition].appendChild(user);
 // }
-function move() {
-    let randomNumber = 1 + Math.floor(Math.random() * 6);
-    currentPosition += randomNumber;
+function move(randomNumber) {
+    currentPosition += randomNumber; //99
+    if (currentPosition >= 99) {
+        currentPosition = 99;
+        win();
+    }
     blocks[currentPosition].appendChild(user);
+
 }
-move();
+
+function win() {
+    console.log('win')
+}
