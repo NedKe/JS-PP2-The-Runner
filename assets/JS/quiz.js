@@ -16,146 +16,76 @@ const increases = {
         type: "red",
     }
 }
-const quiz = {
+const questions = {
     4: {
         question: "What is the sum of 4 and 5?",
-        multipleAnswers: {
-            a: "6",
-            b: "1",
-            c: "3",
-            d: "9"
-        },
+        multipleAnswers: [6, 3, 1, 9],
         rightAnswer: 9,
     },
     11: {
-        question: "What is the sum of 4 and 5 ?",
-        multipleAnswers: {
-            a: "6",
-            b: "1",
-            c: "3",
-            d: "9"
-        },
+        question: "a ?",
+        multipleAnswers: [6, 1, 3, 9],
         rightAnswer: 9,
     },
     17: {
-        question: "What is the sum of 4 and 5 ?",
-        multipleAnswers: {
-            a: "6",
-            b: "1",
-            c: "3",
-            d: "9"
-        },
+        question: "b?",
+        multipleAnswers: [6, 1, 3, 9],
         rightAnswer: 9,
     },
     24: {
-        question: "What is the sum of 4 and 5 ?",
-        multipleAnswers: {
-            a: "6",
-            b: "1",
-            c: "3",
-            d: "9"
-        },
+        question: "c?",
+        multipleAnswers: [6, 1, 3, 9],
         rightAnswer: 9,
     },
     29: {
-        question: "What is the sum of 4 and 5 ?",
-        multipleAnswers: {
-            a: "6",
-            b: "1",
-            c: "3",
-            d: "9"
-        },
+        question: "d?",
+        multipleAnswers: [6, 1, 3, 9],
         rightAnswer: 9,
     },
     32: {
-        question: "What is the sum of 4 and 5 ?",
-        multipleAnswers: {
-            a: "6",
-            b: "1",
-            c: "3",
-            d: "9"
-        },
+        question: "e ?",
+        multipleAnswers: [6, 1, 3, 9],
         rightAnswer: 9,
     },
     37: {
-        question: "What is the sum of 4 and 5 ?",
-        multipleAnswers: {
-            a: "6",
-            b: "1",
-            c: "3",
-            d: "9"
-        },
+        question: "f?",
+        multipleAnswers: [6, 1, 3, 9],
         rightAnswer: 9,
     },
 
     45: {
         question: "What is the sum of 4 and 5 ?",
-        multipleAnswers: {
-            a: "6",
-            b: "1",
-            c: "3",
-            d: "9"
-        },
+        multipleAnswers: [6, 1, 3, 9],
         rightAnswer: 9,
     },
     59: {
         question: "What is the sum of 4 and 5 ?",
-        multipleAnswers: {
-            a: "6",
-            b: "1",
-            c: "3",
-            d: "9"
-        },
+        multipleAnswers: [6, 1, 3, 9],
         rightAnswer: 9,
     },
     61: {
-        question: "What is the sum of 4 and 5 ?",
-        multipleAnswers: {
-            a: "6",
-            b: "1",
-            c: "3",
-            d: "9"
-        },
+        question: "h?",
+        multipleAnswers: [6, 1, 3, 9],
         rightAnswer: 9,
     },
     66: {
-        question: "What is the sum of 4 and 5 ?",
-        multipleAnswers: {
-            a: "6",
-            b: "1",
-            c: "3",
-            d: "9"
-        },
+        question: "i ?",
+        multipleAnswers: [6, 1, 3, 9],
         rightAnswer: 9,
     },
     73: {
-        question: "What is the sum of 4 and 5 ?",
-        multipleAnswers: {
-            a: "6",
-            b: "1",
-            c: "3",
-            d: "9"
-        },
+        question: "j ?",
+        multipleAnswers: [6, 1, 3, 9],
         rightAnswer: 9,
     },
     78: {
-        question: "What is the sum of 4 and 5 ?",
-        multipleAnswers: {
-            a: "6",
-            b: "1",
-            c: "3",
-            d: "9"
-        },
+        question: "k?",
+        multipleAnswers: [6, 1, 3, 9],
         rightAnswer: 9,
     },
     80: {
         question: "What is the sum of 4 and 5 ?",
-        multipleAnswers: {
-            a: "6",
-            b: "1",
-            c: "3",
-            d: "9"
-        },
+        multipleAnswers: [6, 1, 3, 9],
         rightAnswer: 9,
     },
 }
