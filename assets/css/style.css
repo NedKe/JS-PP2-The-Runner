@@ -90,6 +90,7 @@ body {
 
 
 .popup-gameStart {
+    display: none;
     font-family: 'Indie Flower', cursive;
     width: 600px;
     text-align: center;

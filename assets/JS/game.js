@@ -99,3 +99,16 @@ function hideStartPopup() {
 startBtn.addEventListener('click', function () {
     hideStartPopup();
 })
+
+function createCheckedPattern() {
+    for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 10; j++) {
+            if (j % 2 === (i % 2 === 0 ? 0 : 1)) {
+                blocks[10 * i + j].style.backgroundColor = "blue"
+            }
+        }
+
+
+    }
+}
+createCheckedPattern();
