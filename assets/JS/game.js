@@ -5,7 +5,8 @@ let questionAnswersPopup = document.getElementsByClassName('popup-form')[0];
 let submitBtn = document.querySelector(".popup-form #submit button");
 let questionContainer = document.querySelector(".popup-form #question");
 let answersContainer = document.querySelector(".popup-form #answers");
-
+let dice = document.getElementById("dice");
+let StarGamePopup = document.getElementsByClassName('popup-gameStart')[0];
 
 function move(randomNumber) {
     currentPosition += randomNumber; //99
@@ -16,8 +17,11 @@ function move(randomNumber) {
         let question = questions[currentPosition].question
         questionContainer.innerHTML = question;
         let answers = questions[currentPosition].multipleAnswers;
+        const mySound = new sound("assets/music/question.wav")
+        mySound.play();
         createOptions(answers);
         showPopup();
+        dice.disabled = true;
     }
     if (currentPosition >= 99) {
         currentPosition = 99;
@@ -56,11 +60,42 @@ function hidePopup() {
 }
 submitBtn.addEventListener('click', function () {
     hidePopup();
+    dice.disabled = false;
 })
 
 function createOptions(answers) {
     answersContainer.innerHTML = "";
-    for (let answer in answers) {
-        answersContainer.insertAdjacentHTML("beforeend", `<input id="fanswer" type="radio" name="answer" value="${answer}"><label for="fanswer">${answer}</label><br>`);
+    for (let i in answers) {
+        answersContainer.insertAdjacentHTML("beforeend", `<input id="fanswer" type="radio" name="answer" value="${answers[i]}"><label for="fanswer">${answers[i]}</label><br>`);
     }
 }
+submitBtn.addEventListener('click', function () {
+    let userAnswer = parseInt(document.querySelector("[name='answer']:checked").value);
+    if (userAnswer === questions[currentPosition].rightAnswer) {
+        move(2)
+    } else {
+        move(-2)
+    }
+})
+
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function () {
+        this.sound.play();
+    }
+    this.stop = function () {
+        this.sound.pause();
+    }
+}
+
+function hideStartPopup() {
+    StarGamePopup.style.visibility = "hidden";
+}
+startBtn.addEventListener('click', function () {
+    hideStartPopup();
+})

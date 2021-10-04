@@ -1,4 +1,3 @@
-let dice = document.getElementById("dice");
 const icon = document.querySelector('#dice i');
 /* Storing the value of the current icon class , fa-dice, so that we remove it when 
 we roll the dice and add the new value.*/
