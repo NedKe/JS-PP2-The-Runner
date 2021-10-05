@@ -7,9 +7,10 @@ let questionContainer = document.querySelector(".popup-form #question");
 let answersContainer = document.querySelector(".popup-form #answers");
 let dice = document.getElementById("dice");
 let StarGamePopup = document.getElementsByClassName('popup-gameStart')[0];
+let EndGamePopup = document.getElementsByClassName('popup-gameEnd')[0];
 
 function move(randomNumber) {
-    currentPosition += randomNumber; //99
+    currentPosition += randomNumber;
     if (currentPosition in increases) {
         currentPosition += increases[currentPosition].value
     }
@@ -25,14 +26,10 @@ function move(randomNumber) {
     }
     if (currentPosition >= 99) {
         currentPosition = 99;
-        win();
+        showEndPopup();
     }
     blocks[currentPosition].appendChild(user);
 
-}
-
-function win() {
-    console.log('win')
 }
 
 function drawIncreases() {
@@ -49,7 +46,6 @@ function drawQuestions() {
     }
 }
 drawQuestions();
-
 
 function showPopup() {
     questionAnswersPopup.classList.add("visible")
@@ -87,24 +83,41 @@ function sound(src) {
     document.body.appendChild(this.sound);
     this.play = function () {
         this.sound.play();
+        this.sound.loop = true;
     }
     this.stop = function () {
         this.sound.pause();
     }
 }
+startBtn.addEventListener('click', function () {
+    hideStartPopup();
+    const myBackgroundMusic = new sound("assets/music/background.mp3");
+    myBackgroundMusic.play();
+})
 
 function hideStartPopup() {
     StarGamePopup.style.visibility = "hidden";
 }
-startBtn.addEventListener('click', function () {
-    hideStartPopup();
+
+
+function showEndPopup() {
+    EndGamePopup.style.visibility = "visible";
+}
+
+function hideEndPopup() {
+    EndGamePopup.style.visibility = "hidden";
+}
+restartBtn.addEventListener('click', function () {
+    hideEndPopup();
+    currentPosition = 0;
+    blocks[currentPosition].appendChild(user);
 })
 
 function createCheckedPattern() {
     for (let i = 0; i < 10; i++) {
         for (let j = 0; j < 10; j++) {
             if (j % 2 === (i % 2 === 0 ? 0 : 1)) {
-                blocks[10 * i + j].style.backgroundColor = "blue"
+                blocks[10 * i + j].style.backgroundColor = "#cbeaf1"
             }
         }
 
