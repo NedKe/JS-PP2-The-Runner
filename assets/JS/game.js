@@ -8,6 +8,10 @@ let answersContainer = document.querySelector(".popup-form #answers");
 let dice = document.getElementById("dice");
 let StarGamePopup = document.getElementsByClassName('popup-gameStart')[0];
 let EndGamePopup = document.getElementsByClassName('popup-gameEnd')[0];
+const myBackgroundMusic = new sound("assets/music/background.mp3", true);
+let muteBtn = document.querySelector("#mute");
+let backgroundMusicOn = true;
+
 
 function move(randomNumber) {
     currentPosition += randomNumber;
@@ -18,7 +22,7 @@ function move(randomNumber) {
         let question = questions[currentPosition].question
         questionContainer.innerHTML = question;
         let answers = questions[currentPosition].multipleAnswers;
-        const mySound = new sound("assets/music/question.wav")
+        const mySound = new sound("assets/music/question.wav", false)
         mySound.play();
         createOptions(answers);
         showPopup();
@@ -74,7 +78,7 @@ submitBtn.addEventListener('click', function () {
     }
 })
 
-function sound(src) {
+function sound(src, loop) {
     this.sound = document.createElement("audio");
     this.sound.src = src;
     this.sound.setAttribute("preload", "auto");
@@ -83,16 +87,25 @@ function sound(src) {
     document.body.appendChild(this.sound);
     this.play = function () {
         this.sound.play();
-        this.sound.loop = true;
+        this.sound.loop = loop;
     }
     this.stop = function () {
         this.sound.pause();
     }
 }
+
 startBtn.addEventListener('click', function () {
     hideStartPopup();
-    const myBackgroundMusic = new sound("assets/music/background.mp3");
     myBackgroundMusic.play();
+})
+muteBtn.addEventListener('click', function () {
+    if (backgroundMusicOn) {
+        myBackgroundMusic.stop();
+        backgroundMusicOn = false;
+    } else {
+        myBackgroundMusic.play();
+        backgroundMusicOn = true;
+    }
 })
 
 function hideStartPopup() {
