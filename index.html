@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <div id="stop-watch"></div>
     <div id="game">
         <div>
             <div id="user"></div>
@@ -128,6 +129,12 @@
             <p><strong>Click to role the dice!</strong></p>
         </div>
     </div>
+    <div id="choose-level">
+        <h3>Choose game level</h3>
+        <button id="basic">Basic</button>
+        <button id="hard">Hard</button>
+
+    </div>
     <div class=popup-gameStart>
         <h2>Welcome to the Running Mouse game!</h2>
         <p>You start the game from the top left corner of the board. The mouse moves based on your dice number when you
@@ -141,7 +148,7 @@
         <button id="startBtn">Start the game!</button>
     </div>
     <div class="popup-gameEnd">
-        <h2>Well done!</h2>
+        <h2 id="result"></h2>
         <button id="restartBtn">Restart</button>
     </div>
     <div class="popup-form">
@@ -157,7 +164,6 @@
     <!--Footer elements -->
     <footer>
         <a class="logo" href="index.html">
-            <img src="assets/images/22251-rat-icon.png" alt="Mouse">
             <h1>Running Mouse</h1>
         </a>
         <!--The social media-->

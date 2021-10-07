@@ -25,6 +25,8 @@ body {
     box-shadow: 4px 4px;
 }
 
+
+
 #game>div {
     background: #fff;
     display: flex;
@@ -47,6 +49,28 @@ body {
     height: 20px;
     border-radius: 50px;
     background: orange;
+}
+
+#choose-level {
+    display: none;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+}
+
+#choose-level.show {
+    display: block;
+}
+
+#choose-level button {
+    display: block;
+    margin-top: 20px;
 }
 
 #dice {
@@ -119,6 +143,18 @@ body {
     border-radius: 50px;
     padding: 10px;
     background-color: #edf8fa;
+}
+
+@media screen and (max-width: 500px) {
+    #game {
+        width: 426px;
+        height: 426px;
+        grid-template: repeat(10, 40px) / repeat(10, 40px);
+    }
+
+    .popup-gameStart {
+        width: 450px;
+    }
 }
 
 #startBtn,
