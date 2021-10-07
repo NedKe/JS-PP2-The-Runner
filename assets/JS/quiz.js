@@ -41,10 +41,51 @@ const increasesLevel2 = {
         value: 8,
         type: "green",
     },
+    9: {
+        value: -5,
+        type: "red",
+    },
+    15: {
+        value: -2,
+        type: "red",
+    },
+    27: {
+        value: -5,
+        type: "red",
+    },
+    30: {
+        value: -6,
+        type: "red",
+    },
     43: {
         value: -6,
         type: "red",
+    },
+    47: {
+        value: 3,
+        type: "green",
+    },
+    64: {
+        value: -8,
+        type: "red",
+    },
+    68: {
+        value: -6,
+        type: "red",
+    },
+    72: {
+        value: -6,
+        type: "red",
+    },
+    87: {
+        value: 2,
+        type: "green",
+    },
+    94: {
+        value: -10,
+        type: "red",
     }
+
 }
 const questions = {
     4: {
@@ -122,74 +163,104 @@ const questions = {
 
 const questionsLevel2 = {
     4: {
-        question: "What is the sum of 4 and 5?",
-        multipleAnswers: [6, 3, 1, 9],
-        rightAnswer: 9,
+        question: "How much saliva we produce everyday",
+        multipleAnswers: ["One litre", "Half a litre", "100 mililitre", "50 mililitre"],
+        rightAnswer: "One litre",
     },
     11: {
-        question: "a ?",
-        multipleAnswers: [6, 1, 3, 9],
-        rightAnswer: 9,
+        question: "How the universe started in physics?",
+        multipleAnswers: ["Big Bang", "Explosion", "collision", "oxidation"],
+        rightAnswer: "Big Bang",
     },
     17: {
-        question: "b?",
-        multipleAnswers: [6, 1, 3, 9],
-        rightAnswer: 9,
+        question: "Wich one is a non-renewable?",
+        multipleAnswers: ["Benzin", "Wind", "Water", "Sunlight"],
+        rightAnswer: "Benzin",
+    },
+    19: {
+        question: "Which country has the shortest people in the world?",
+        multipleAnswers: ["Netherland", "Indonesia", "Philiphins", "Mexico"],
+        rightAnswer: "Indonesia",
     },
     24: {
-        question: "c?",
-        multipleAnswers: [6, 1, 3, 9],
-        rightAnswer: 9,
+        question: "what is 12 times 12",
+        multipleAnswers: ["144", "125", "122", "164"],
+        rightAnswer: "144",
     },
     29: {
-        question: "d?",
-        multipleAnswers: [6, 1, 3, 9],
-        rightAnswer: 9,
+        question: "What is the name of the 1976 film about the Watergate scandal, starring Robert Redford and Dustin Hoffman??",
+        multipleAnswers: ["All the President's Men", "Taxi Driver", "Network", "Rocky"],
+        rightAnswer: "All the President's Men",
     },
     32: {
-        question: "e ?",
-        multipleAnswers: [6, 1, 3, 9],
-        rightAnswer: 9,
+        question: "What is the currency of Emirates",
+        multipleAnswers: ["Dollar", "Dinar", "Dirham", "Pound"],
+        rightAnswer: "Dirham",
     },
     37: {
-        question: "f?",
-        multipleAnswers: [6, 1, 3, 9],
-        rightAnswer: 9,
+        question: "Who is the composer of The Lion King, Inception and Pirates of the Caribbean.?",
+        multipleAnswers: ["Hans Zimmer", "James Horner", "Rachel Portman", "Ramin Djawadi"],
+        rightAnswer: "Hans Zimmer",
     },
 
     45: {
-        question: "What is the sum of 4 and 5 ?",
-        multipleAnswers: [6, 1, 3, 9],
-        rightAnswer: 9,
+        question: "What is the the mercury symbol ?",
+        multipleAnswers: ["Hg", "Sn", "Au", "Mn"],
+        rightAnswer: "Hg",
+    },
+    49: {
+        question: "What is the famous food in England?",
+        multipleAnswers: ["Fish and Chips", "Pizza", "Hamburger", "Salmon"],
+        rightAnswer: "Fish and Chips",
+    },
+    54: {
+        question: "What is the nearest large galaxy to Milky Way?",
+        multipleAnswers: ["	Canis Major Dwarf", "Andromeda", "Ursa Major", "Pegasus"],
+        rightAnswer: "Andromeda",
     },
     59: {
-        question: "What is the sum of 4 and 5 ?",
-        multipleAnswers: [6, 1, 3, 9],
-        rightAnswer: 9,
+        question: "Where is the world’s most active volcano located?",
+        multipleAnswers: ["Canary Islands", "Italy", "Hawaii", "Indonesia"],
+        rightAnswer: "Hawaii",
     },
     61: {
-        question: "h?",
-        multipleAnswers: [6, 1, 3, 9],
-        rightAnswer: 9,
+        question: "What is the fattest organ of the body ",
+        multipleAnswers: ["Stomach", "Liver", "Brain", "intestines"],
+        rightAnswer: "Brain",
     },
     66: {
-        question: "i ?",
-        multipleAnswers: [6, 1, 3, 9],
-        rightAnswer: 9,
+        question: "What field Stephen Hawking famous for?",
+        multipleAnswers: ["Chemistry", "Math", "Physics", "Bilogoy"],
+        rightAnswer: "Physics",
     },
     73: {
-        question: "j ?",
-        multipleAnswers: [6, 1, 3, 9],
-        rightAnswer: 9,
+        question: "Which on is known as the God particle?",
+        multipleAnswers: ["Electron", "Proton", "Plasma", "Higgs Boson"],
+        rightAnswer: "Higgs Boson",
     },
     78: {
-        question: "k?",
-        multipleAnswers: [6, 1, 3, 9],
-        rightAnswer: 9,
+        question: "Who is the creator of the Game of Thrones Music",
+        multipleAnswers: ["Howard Shore", "Ramin Djawadi", "Elton John", "Hanz Zimmer"],
+        rightAnswer: "Ramin Djawadi",
     },
     80: {
-        question: "What is the sum of 4 and 5 ?",
-        multipleAnswers: [6, 1, 3, 9],
-        rightAnswer: 9,
+        question: "Who proposed the theory of relativity for the first time?",
+        multipleAnswers: ["Albert Einstein", "James Watt", "Isaac Newton", "Marie Curie"],
+        rightAnswer: "Albert Einstein",
     },
+    84: {
+        question: "What causes Covid disease?",
+        multipleAnswers: ["Bacteria", "Fungi", "Virus", "Algae"],
+        rightAnswer: "Virus",
+    },
+    88: {
+        question: "What is the name of an object that connects to points?",
+        multipleAnswers: ["Line", "Dot", "Dash", "Circle"],
+        rightAnswer: "Line",
+    },
+    96: {
+        question: "How salt is known in chemistry ?",
+        multipleAnswers: ["Sodium Chloride", "Calcium Chloride", "Sodium Iodide", "Carbon dioxide"],
+        rightAnswer: "Sodium Chloride",
+    }
 }

@@ -167,9 +167,11 @@ muteBtn.addEventListener('click', function () {
     if (backgroundMusicOn) {
         myBackgroundMusic.stop();
         backgroundMusicOn = false;
+        muteBtn.innerHTML = "Unmute"
     } else {
         myBackgroundMusic.play();
         backgroundMusicOn = true;
+        muteBtn.innerHTML = "mute"
     }
 })
 
