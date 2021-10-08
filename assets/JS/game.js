@@ -1,4 +1,5 @@
 let currentPosition = 0;
+let tempPosition
 const user = document.querySelector('#game #user');
 const blocks = document.querySelectorAll('#game > div');
 let questionAnswersPopup = document.getElementsByClassName('popup-form')[0];
@@ -21,14 +22,16 @@ levelBasicBtn.addEventListener('click', function () {
     levelPopup.classList.remove("show");
     level = 1;
     createCheckedPattern();
-    drawIncreasesAndQuestions()
+    drawIncreasesAndQuestions();
+    dice.disabled = false;
 })
 levelHardBtn.addEventListener('click', function () {
     countDown();
     levelPopup.classList.remove("show");
     level = 2;
     createCheckedPattern();
-    drawIncreasesAndQuestions()
+    drawIncreasesAndQuestions();
+    dice.disabled = false;
 })
 
 function drawIncreasesAndQuestions() {
@@ -42,7 +45,7 @@ let timer = document.querySelector("#stop-watch")
 
 
 function resetTimer() {
-    gameTime = 4;
+    gameTime = 120;
     timer.innerHTML = gameTime + "";
 }
 
@@ -64,26 +67,51 @@ function countDown() {
 }
 
 function move(randomNumber) {
+    tempPosition = currentPosition;
     currentPosition += randomNumber;
-    if (currentPosition in increases) {
-        currentPosition += increases[currentPosition].value
+    let rewardPunishment;
+    let currentQuestions;
+    if (level === 1) {
+        rewardPunishment = increases;
+        currentQuestions = questions;
+    } else if (level === 2) {
+        rewardPunishment = increasesLevel2;
+        currentQuestions = questionsLevel2;
     }
-    if (currentPosition in questions) {
-        let question = questions[currentPosition].question
+    if (currentPosition in rewardPunishment) {
+        currentPosition += rewardPunishment[currentPosition].value;
+    }
+    if (currentPosition in currentQuestions) {
+        let question = currentQuestions[currentPosition].question;
         questionContainer.innerHTML = question;
-        let answers = questions[currentPosition].multipleAnswers;
+        let answers = currentQuestions[currentPosition].multipleAnswers;
         const mySound = new sound("assets/music/question.wav", false)
         mySound.play();
         createOptions(answers);
         showPopup();
         dice.disabled = true;
     }
-    if (currentPosition >= 99) {
-        currentPosition = 99;
-        clearInterval(timerId);
-        showEndPopup("Well done!");
-    }
-    blocks[currentPosition].appendChild(user);
+
+    dice.disabled = true;
+    let id = setInterval(function () {
+        if (randomNumber > 0) {
+            ++tempPosition;
+        } else {
+            --tempPosition;
+        }
+
+        if (currentPosition >= 99) {
+            currentPosition = 99;
+            clearInterval(timerId);
+            clearInterval(id);
+            showEndPopup("Well done!");
+        }
+        blocks[tempPosition].appendChild(user);
+        if (tempPosition === currentPosition) {
+            dice.disabled = false;
+            clearInterval(id);
+        }
+    }, 500);
 
 }
 
@@ -129,15 +157,21 @@ submitBtn.addEventListener('click', function () {
 function createOptions(answers) {
     answersContainer.innerHTML = "";
     for (let i in answers) {
-        answersContainer.insertAdjacentHTML("beforeend", `<input id="fanswer" type="radio" name="answer" value="${answers[i]}"><label for="fanswer">${answers[i]}</label><br>`);
+        answersContainer.insertAdjacentHTML("beforeend", `<input id="fanswer-${i}" type="radio" name="answer" value="${answers[i]}"><label for="fanswer-${i}">${answers[i]}</label><br>`);
     }
 }
 submitBtn.addEventListener('click', function () {
     let userAnswer = document.querySelector("[name='answer']:checked").value;
-    if (userAnswer === questions[currentPosition].rightAnswer) {
-        move(2)
+    let currentQuestions;
+    if (level === 1) {
+        currentQuestions = questions;
+    } else if (level === 2) {
+        currentQuestions = questionsLevel2;
+    }
+    if (userAnswer === currentQuestions[currentPosition].rightAnswer) {
+        move(2);
     } else {
-        move(-2)
+        move(-2);
     }
 })
 
@@ -159,7 +193,7 @@ function sound(src, loop) {
 
 startBtn.addEventListener('click', function () {
     hideStartPopup();
-    myBackgroundMusic.play();
+    //myBackgroundMusic.play();
     levelPopup.classList.add("show")
     // countDown();
 })
@@ -183,6 +217,8 @@ function hideStartPopup() {
 function showEndPopup(message) {
     resultMsg.innerHTML = message;
     EndGamePopup.style.visibility = "visible";
+    dice.disabled = true;
+    hidePopup();
 }
 
 function hideEndPopup() {

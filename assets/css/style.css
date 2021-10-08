@@ -24,6 +24,11 @@ body {
     top: 20%;
 }
 
+#answers {
+    text-align: left;
+    padding: 0 40px;
+}
+
 
 
 #mute {

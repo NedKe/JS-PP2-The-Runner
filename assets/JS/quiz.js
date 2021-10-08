@@ -69,7 +69,7 @@ const increasesLevel2 = {
         value: -8,
         type: "red",
     },
-    68: {
+    69: {
         value: -6,
         type: "red",
     },
