@@ -38,6 +38,5 @@ dice.addEventListener('click', function () {
 
     // add the new dice class to the icon
     icon.classList.add(currentDiceIcon);
-    console.log(currentPosition);
     move(randomValue);
 })
