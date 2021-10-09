@@ -157,22 +157,34 @@ function move(randomNumber) {
         blocks[tempPosition].appendChild(user);
         if (tempPosition === currentPosition) {
             dice.disabled = false;
-            if (currentPosition in rewardPunishment) {
-                move(rewardPunishment[currentPosition].value);
-            }
-            if (currentPosition in currentQuestions) {
-                let question = currentQuestions[currentPosition].question;
-                questionContainer.innerHTML = question;
-                let answers = currentQuestions[currentPosition].multipleAnswers;
-                const mySound = new sound("assets/music/question.wav", false);
-                mySound.play();
-                createOptions(answers);
-                showQuestionPopup();
-                dice.disabled = true;
-            }
+            checkIfRewardOrPunishment(currentPosition, rewardPunishment);
+            checkAndShowQuestionForCurrentPosition(
+                currentPosition,
+                currentQuestions
+            );
             clearInterval(id);
         }
     }, 500);
+}
+function checkIfRewardOrPunishment(currentPosition, rewardPunishment) {
+    if (currentPosition in rewardPunishment) {
+        move(rewardPunishment[currentPosition].value);
+    }
+}
+function checkAndShowQuestionForCurrentPosition(
+    currentPosition,
+    currentQuestions
+) {
+    if (currentPosition in currentQuestions) {
+        let question = currentQuestions[currentPosition].question;
+        questionContainer.innerHTML = question;
+        let answers = currentQuestions[currentPosition].multipleAnswers;
+        const mySound = new sound("assets/music/question.wav", false);
+        mySound.play();
+        createOptions(answers);
+        showQuestionPopup();
+        dice.disabled = true;
+    }
 }
 //End of move function
 
