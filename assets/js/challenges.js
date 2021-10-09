@@ -8,7 +8,7 @@ const increases = {
         type: "red",
     },
     22: {
-        value: 8,
+        value: -8,
         type: "red",
     },
     35: {
@@ -20,7 +20,7 @@ const increases = {
         type: "green",
     },
     53: {
-        value: 3,
+        value: -3,
         type: "red",
     },
     67: {
