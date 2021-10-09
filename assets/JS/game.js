@@ -1,41 +1,89 @@
-let currentPosition = 0;
-let tempPosition;
 const user = document.querySelector('#game #user');
 const blocks = document.querySelectorAll('#game > div');
-let questionAnswersPopup = document.getElementsByClassName('popup-form')[0];
-let submitBtn = document.querySelector(".popup-form #submit button");
-let questionContainer = document.querySelector(".popup-form #question");
-let answersContainer = document.querySelector(".popup-form #answers");
-let dice = document.getElementById("dice");
-let StarGamePopup = document.getElementsByClassName('popup-gameStart')[0];
-let EndGamePopup = document.getElementsByClassName('popup-gameEnd')[0];
+const questionAnswersPopup = document.getElementsByClassName('popup-form')[0];
+const submitBtn = document.querySelector(".popup-form #submit button");
+const questionContainer = document.querySelector(".popup-form #question");
+const answersContainer = document.querySelector(".popup-form #answers");
+const dice = document.getElementById("dice");
+const StarGamePopup = document.getElementsByClassName('popup-gameStart')[0];
+const EndGamePopup = document.getElementsByClassName('popup-gameEnd')[0];
 const myBackgroundMusic = new sound("assets/music/background.mp3", true);
-let muteBtn = document.querySelector("#mute");
-let resultMsg = document.querySelector("#result");
-let backgroundMusicOn = true;
-let levelPopup = document.querySelector("#choose-level");
-let levelBasicBtn = document.querySelector("#choose-level #basic");
-let levelHardBtn = document.querySelector("#choose-level #hard");
+const muteBtn = document.querySelector("#mute");
+const resultMsg = document.querySelector("#result");
+const levelPopup = document.querySelector("#choose-level");
+const levelBasicBtn = document.querySelector("#choose-level #basic");
+const levelHardBtn = document.querySelector("#choose-level #hard");
 
-//Event listener for buttons basic and hard
+let backgroundMusicOn = true;
+let currentPosition = 0;
+let tempPosition;
 let level = 1;
-levelBasicBtn.addEventListener('click', function () {
-    countDown();
-    levelPopup.classList.remove("show");
-    level = 1;
-    createCheckedPattern();
-    drawIncreasesAndQuestions();
-    dice.disabled = false;
-})
-levelHardBtn.addEventListener('click', function () {
-    countDown();
-    levelPopup.classList.remove("show");
-    level = 2;
-    createCheckedPattern();
-    drawIncreasesAndQuestions();
-    dice.disabled = false;
-})
-//End of event listener for buttons basic and hard
+
+function initializeEventListeners() {
+    //Event listener for buttons basic and hard
+    levelBasicBtn.addEventListener('click', function () {
+        countDown();
+        levelPopup.classList.remove("show");
+        level = 1;
+        createCheckedPattern();
+        drawIncreasesAndQuestions();
+        dice.disabled = false;
+    })
+    levelHardBtn.addEventListener('click', function () {
+        countDown();
+        levelPopup.classList.remove("show");
+        level = 2;
+        createCheckedPattern();
+        drawIncreasesAndQuestions();
+        dice.disabled = false;
+    })
+    //Event listeners on  all buttons
+    startBtn.addEventListener('click', function () {
+        hideStartPopup();
+        myBackgroundMusic.play();
+        levelPopup.classList.add("show")
+    })
+    muteBtn.addEventListener('click', function () {
+        if (backgroundMusicOn) {
+            myBackgroundMusic.stop();
+            backgroundMusicOn = false;
+            muteBtn.innerHTML = "Unmute"
+        } else {
+            myBackgroundMusic.play();
+            backgroundMusicOn = true;
+            muteBtn.innerHTML = "mute"
+        }
+    })
+    submitBtn.addEventListener('click', function () {
+        hidePopup();
+        dice.disabled = false;
+    })
+    submitBtn.addEventListener('click', function () {
+        let userAnswer = document.querySelector("[name='answer']:checked").value;
+        let currentQuestions;
+        if (level === 1) {
+            currentQuestions = questions;
+        } else if (level === 2) {
+            currentQuestions = questionsLevel2;
+        }
+        if (userAnswer === currentQuestions[currentPosition].rightAnswer) {
+            move(2);
+        } else {
+            move(-2);
+        }
+    })
+    restartBtn.addEventListener('click', function () {
+        hideEndPopup();
+        currentPosition = 0;
+        resetTimer();
+        blocks[currentPosition].appendChild(user);
+        levelPopup.classList.add("show");
+
+    });
+    //End of eventlistener on all buttons
+    //End of event listener for buttons basic and hard
+}
+
 
 //Function calling the two functions generating increases and questions
 function drawIncreasesAndQuestions() {
@@ -161,50 +209,7 @@ function hidePopup() {
 }
 //End of functions showing and hiding questions and multioption answers.
 
-//Event listeners on  all buttons
-startBtn.addEventListener('click', function () {
-    hideStartPopup();
-    myBackgroundMusic.play();
-    levelPopup.classList.add("show")
-})
-muteBtn.addEventListener('click', function () {
-    if (backgroundMusicOn) {
-        myBackgroundMusic.stop();
-        backgroundMusicOn = false;
-        muteBtn.innerHTML = "Unmute"
-    } else {
-        myBackgroundMusic.play();
-        backgroundMusicOn = true;
-        muteBtn.innerHTML = "mute"
-    }
-})
-submitBtn.addEventListener('click', function () {
-    hidePopup();
-    dice.disabled = false;
-})
-submitBtn.addEventListener('click', function () {
-    let userAnswer = document.querySelector("[name='answer']:checked").value;
-    let currentQuestions;
-    if (level === 1) {
-        currentQuestions = questions;
-    } else if (level === 2) {
-        currentQuestions = questionsLevel2;
-    }
-    if (userAnswer === currentQuestions[currentPosition].rightAnswer) {
-        move(2);
-    } else {
-        move(-2);
-    }
-})
-restartBtn.addEventListener('click', function () {
-    hideEndPopup();
-    currentPosition = 0;
-    resetTimer();
-    blocks[currentPosition].appendChild(user);
-    levelPopup.classList.add("show");
 
-});
-//End of eventlistener on all buttons
 
 //Game sound function taken from the W3schools.
 function sound(src, loop) {
@@ -253,4 +258,5 @@ function createCheckedPattern() {
         }
     }
 }
+initializeEventListeners();
 createCheckedPattern();
