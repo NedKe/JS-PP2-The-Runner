@@ -19,23 +19,22 @@ let currentPosition = 0;
 let tempPosition;
 let level = 1;
 
+function initializeLevel(chosenLevel) {
+    level = chosenLevel;
+    countDown();
+    levelPopup.classList.remove("show");
+    createCheckedPattern();
+    drawIncreasesAndQuestions();
+    dice.disabled = false;
+}
+
 function initializeEventListeners() {
     //Event listener for buttons basic and hard
     levelBasicBtn.addEventListener('click', function () {
-        countDown();
-        levelPopup.classList.remove("show");
-        level = 1;
-        createCheckedPattern();
-        drawIncreasesAndQuestions();
-        dice.disabled = false;
+        initializeLevel(1);
     })
     levelHardBtn.addEventListener('click', function () {
-        countDown();
-        levelPopup.classList.remove("show");
-        level = 2;
-        createCheckedPattern();
-        drawIncreasesAndQuestions();
-        dice.disabled = false;
+        initializeLevel(2);
     })
     //Event listeners on  all buttons
     startBtn.addEventListener('click', function () {
