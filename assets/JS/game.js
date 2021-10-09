@@ -1,12 +1,12 @@
-const user = document.querySelector('#game #user');
-const blocks = document.querySelectorAll('#game > div');
-const questionAnswersPopup = document.getElementsByClassName('popup-form')[0];
+const user = document.querySelector("#game #user");
+const blocks = document.querySelectorAll("#game > div");
+const questionAnswersPopup = document.getElementsByClassName("popup-form")[0];
 const submitBtn = document.querySelector(".popup-form #submit button");
 const questionContainer = document.querySelector(".popup-form #question");
 const answersContainer = document.querySelector(".popup-form #answers");
 const dice = document.getElementById("dice");
-const StarGamePopup = document.getElementsByClassName('popup-gameStart')[0];
-const EndGamePopup = document.getElementsByClassName('popup-gameEnd')[0];
+const StarGamePopup = document.getElementsByClassName("popup-gameStart")[0];
+const EndGamePopup = document.getElementsByClassName("popup-gameEnd")[0];
 const myBackgroundMusic = new sound("assets/music/background.mp3", true);
 const muteBtn = document.querySelector("#mute");
 const resultMsg = document.querySelector("#result");
@@ -14,15 +14,14 @@ const levelPopup = document.querySelector("#choose-level");
 const levelBasicBtn = document.querySelector("#choose-level #basic");
 const levelHardBtn = document.querySelector("#choose-level #hard");
 const timer = document.querySelector("#stop-watch");
-const icon = document.querySelector('#dice i');
+const icon = document.querySelector("#dice i");
 let gameTime;
 let timerId;
 let backgroundMusicOn = true;
 let currentPosition = 0;
 let tempPosition;
 let level = 1;
-let currentDiceIcon = 'fa-dice';
-
+let currentDiceIcon = "fa-dice";
 
 /* Storing the value of the current icon class , fa-dice, so that we remove it when 
 we roll the dice and add the new value.*/
@@ -41,10 +40,10 @@ function initializeLevel(chosenLevel) {
 
 function initializeEventListeners() {
     // Event listener on the dice icon to handle the click
-    dice.addEventListener('click', function () {
+    dice.addEventListener("click", function() {
         const randomValue = toss();
-        console.log(randomValue)
-        // remove the current icon's dice class    
+        console.log(randomValue);
+        // remove the current icon's dice class
         icon.classList.remove(currentDiceIcon);
         // update the current dice icon with the new value based on toss and convert it to the fa dice class respective to the number
         currentDiceIcon = `fa-dice-${convertDigitToCharacter(randomValue)}`;
@@ -52,37 +51,38 @@ function initializeEventListeners() {
         // add the new dice class to the icon
         icon.classList.add(currentDiceIcon);
         move(randomValue);
-    })
+    });
     //Event listener for buttons basic and hard
-    levelBasicBtn.addEventListener('click', function () {
+    levelBasicBtn.addEventListener("click", function() {
         initializeLevel(1);
-    })
-    levelHardBtn.addEventListener('click', function () {
+    });
+    levelHardBtn.addEventListener("click", function() {
         initializeLevel(2);
-    })
+    });
     //Event listeners on  all buttons
-    startBtn.addEventListener('click', function () {
+    startBtn.addEventListener("click", function() {
         hideStartPopup();
         myBackgroundMusic.play();
-        levelPopup.classList.add("show")
-    })
-    muteBtn.addEventListener('click', function () {
+        levelPopup.classList.add("show");
+    });
+    muteBtn.addEventListener("click", function() {
         if (backgroundMusicOn) {
             myBackgroundMusic.stop();
             backgroundMusicOn = false;
-            muteBtn.innerHTML = "Unmute"
+            muteBtn.innerHTML = "Unmute";
         } else {
             myBackgroundMusic.play();
             backgroundMusicOn = true;
-            muteBtn.innerHTML = "mute"
+            muteBtn.innerHTML = "mute";
         }
-    })
-    submitBtn.addEventListener('click', function () {
+    });
+    submitBtn.addEventListener("click", function() {
         hideQuestionPopup();
         dice.disabled = false;
-    })
-    submitBtn.addEventListener('click', function () {
-        let userAnswer = document.querySelector("[name='answer']:checked").value;
+    });
+    submitBtn.addEventListener("click", function() {
+        let userAnswer = document.querySelector("[name='answer']:checked")
+            .value;
         let currentQuestions;
         if (level === 1) {
             currentQuestions = questions;
@@ -94,14 +94,13 @@ function initializeEventListeners() {
         } else {
             move(-2);
         }
-    })
-    restartBtn.addEventListener('click', function () {
+    });
+    restartBtn.addEventListener("click", function() {
         hideEndPopup();
         currentPosition = 0;
         resetTimer();
         blocks[currentPosition].appendChild(user);
         levelPopup.classList.add("show");
-
     });
     //End of eventlistener on all buttons
     //End of event listener for buttons basic and hard
@@ -113,9 +112,8 @@ function resetTimer() {
     timer.innerHTML = gameTime + "";
 }
 
-
 function countDown() {
-    timerId = setInterval(function () {
+    timerId = setInterval(function() {
         gameTime = gameTime - 1;
         timer.innerHTML = gameTime + "";
         if (gameTime === 0) {
@@ -124,7 +122,7 @@ function countDown() {
             }
             clearInterval(timerId);
         }
-    }, 1000)
+    }, 1000);
 }
 //End of stop watch function
 
@@ -144,7 +142,7 @@ function move(randomNumber) {
     }
 
     dice.disabled = true;
-    let id = setInterval(function () {
+    let id = setInterval(function() {
         if (randomNumber > 0) {
             ++tempPosition;
         } else {
@@ -166,7 +164,7 @@ function move(randomNumber) {
                 let question = currentQuestions[currentPosition].question;
                 questionContainer.innerHTML = question;
                 let answers = currentQuestions[currentPosition].multipleAnswers;
-                const mySound = new sound("assets/music/question.wav", false)
+                const mySound = new sound("assets/music/question.wav", false);
                 mySound.play();
                 createOptions(answers);
                 showQuestionPopup();
@@ -182,10 +180,12 @@ function move(randomNumber) {
 function createOptions(answers) {
     answersContainer.innerHTML = "";
     for (let i in answers) {
-        answersContainer.insertAdjacentHTML("beforeend", `<input id="fanswer-${i}" type="radio" name="answer" value="${answers[i]}"><label for="fanswer-${i}">${answers[i]}</label><br>`);
+        answersContainer.insertAdjacentHTML(
+            "beforeend",
+            `<input id="fanswer-${i}" type="radio" name="answer" value="${answers[i]}"><label for="fanswer-${i}">${answers[i]}</label><br>`
+        );
     }
 }
-
 
 //Function calling the two functions generating increases and questions
 function drawChallenges() {
@@ -215,21 +215,19 @@ function drawQuestions() {
         currentQuestions = questionsLevel2;
     }
     for (let key in currentQuestions) {
-        blocks[key].innerHTML = '?'
+        blocks[key].innerHTML = "?";
     }
 }
 
 //Functions showing and hiding questions and multioption answers.
 function showQuestionPopup() {
-    questionAnswersPopup.classList.add("visible")
+    questionAnswersPopup.classList.add("visible");
 }
 
 function hideQuestionPopup() {
-    questionAnswersPopup.classList.remove("visible")
+    questionAnswersPopup.classList.remove("visible");
 }
 //End of functions showing and hiding questions and multioption answers.
-
-
 
 // Functions hiding start pop up and showing/hididng end pop up when game is finished.
 function hideStartPopup() {
@@ -258,9 +256,9 @@ function createCheckedPattern() {
                 blocks[10 * i + j].innerHTML = "";
             }
             if (j % 2 === (i % 2 === 0 ? 0 : 1)) {
-                blocks[10 * i + j].style.backgroundColor = "#cbeaf1"
+                blocks[10 * i + j].style.backgroundColor = "#cbeaf1";
             } else {
-                blocks[10 * i + j].style.backgroundColor = "#fff"
+                blocks[10 * i + j].style.backgroundColor = "#fff";
             }
         }
     }
