@@ -265,54 +265,81 @@ input[type=submit] {
     min-height: 27px;
 }
 
-/* Media query for screen sizes from 500px wide and down */
-@media screen and (max-width: 500px) {
-    #stop-watch {
-        right: 0;
+/* Media query for screen sizes from 700px wide and down*/
+@media screen and (max-width: 700px) {
+
+    #stop-watch,
+    #mute {
+        width: 40px;
+        height: 40px;
+        font-size: 2rem;
     }
 
-    #mute {}
+    #stop-watch {
+        right: 30%;
+    }
+
+    #mute {
+        left: 5%;
+    }
 
     #game {
-        width: 276px;
-        height: 276px;
+        width: 286px;
+        height: 286px;
         grid-template: repeat(10, 25px) / repeat(10, 25px);
     }
 
     .popup-gameStart {
-        width: 350px;
-        left: 75%;
-    }
-}
-
-/* Media query for screen sizes from 700px wide and down*/
-@media screen and (max-width: 700px) {
-    #game {
-        width: 486px;
-        height: 486px;
-        grid-template: repeat(10, 46px) / repeat(10, 46px);
+        width: 300px;
+        top: 60%;
+        left: 50%;
     }
 
-    .popup-gameStart {
-        width: 400px;
+    .popup-gameEnd {
         top: 50%;
+        left: 50%;
+    }
+
+    .popup-form {
+        width: 350px;
+        font-size: 15px;
+        top: 45%;
+    }
+
+    #choose-level {
+        width: 300px;
+        height: 350px;
+        top: 60%;
+        left: 50%;
     }
 
     footer {
-        display: block;
-        padding-left: 25%;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
     }
 
     footer .social_media i {
-        padding: 20px 20px;
+        padding: 10px 20px;
+    }
+
+    footer nav a {
+        padding: 10px;
+        justify-items: center;
     }
 
     #dice {
         margin-left: 40%;
     }
 
+
     #dice~div {
         margin-left: 28%;
+    }
+
+    .contact-form {
+        width: 280px;
+        margin: 50px auto;
     }
 }
 
@@ -328,11 +355,9 @@ input[type=submit] {
         width: 80px;
         height: 80px;
         top: 25px;
-    }
-
-    #stop-watch {
         right: 25%;
     }
+
 
     #mute {
         left: 25%;

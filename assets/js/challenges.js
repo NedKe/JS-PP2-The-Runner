@@ -94,12 +94,12 @@ const questions = {
         rightAnswer: "Tbilisi",
     },
     11: {
-        question: "What is the name of the first decentralized cryptocurrency",
+        question: "What is the name of the first decentralized cryptocurrency?",
         multipleAnswers: ["Ethereum", "Bitcoin", "Ripple", "Litecoin"],
         rightAnswer: "Bitcoin",
     },
     17: {
-        question: "Where was pizza invented",
+        question: "Where was pizza invented?",
         multipleAnswers: ["Spain", "Greece", "Italy", "Germany"],
         rightAnswer: 9,
     },
@@ -114,7 +114,7 @@ const questions = {
         rightAnswer: 9,
     },
     32: {
-        question: "Which composer composed Für Elise",
+        question: "Which composer composed Für Elise?",
         multipleAnswers: ["Bach", "Chopin", "Mozart", "Beethoven"],
         rightAnswer: "Beethoven",
     },
@@ -145,7 +145,7 @@ const questions = {
         rightAnswer: "Cantonese",
     },
     73: {
-        question: "What is the fastest car with speed of 316 mph in 2021",
+        question: "What is the fastest car with speed of 316 mph in 2021?",
         multipleAnswers: ["Tuatara", "Koenigsegg", "Bugatti", "Ferarri"],
         rightAnswer: "Tuatara",
     },
@@ -163,7 +163,7 @@ const questions = {
 
 const questionsLevel2 = {
     4: {
-        question: "How much saliva we produce everyday",
+        question: "How much saliva we produce everyday?",
         multipleAnswers: ["One litre", "Half a litre", "100 mililitre", "50 mililitre"],
         rightAnswer: "One litre",
     },
@@ -183,28 +183,28 @@ const questionsLevel2 = {
         rightAnswer: "Indonesia",
     },
     24: {
-        question: "what is 12 times 12",
+        question: "what is 12 times 12?",
         multipleAnswers: ["144", "125", "122", "164"],
         rightAnswer: "144",
     },
     29: {
-        question: "What is the name of the 1976 film about the Watergate scandal, starring Robert Redford and Dustin Hoffman??",
+        question: "What is the name of the 1976 film about the Watergate scandal, starring Robert Redford and Dustin Hoffman?",
         multipleAnswers: ["All the President's Men", "Taxi Driver", "Network", "Rocky"],
         rightAnswer: "All the President's Men",
     },
     32: {
-        question: "What is the currency of Emirates",
+        question: "What is the currency of Emirates?",
         multipleAnswers: ["Dollar", "Dinar", "Dirham", "Pound"],
         rightAnswer: "Dirham",
     },
     37: {
-        question: "Who is the composer of The Lion King, Inception and Pirates of the Caribbean.?",
+        question: "Who is the composer of The Lion King, Inception and Pirates of the Caribbean?",
         multipleAnswers: ["Hans Zimmer", "James Horner", "Rachel Portman", "Ramin Djawadi"],
         rightAnswer: "Hans Zimmer",
     },
 
     45: {
-        question: "What is the the mercury symbol ?",
+        question: "What is the the mercury symbol?",
         multipleAnswers: ["Hg", "Sn", "Au", "Mn"],
         rightAnswer: "Hg",
     },
@@ -224,7 +224,7 @@ const questionsLevel2 = {
         rightAnswer: "Hawaii",
     },
     61: {
-        question: "What is the fattest organ of the body ",
+        question: "What is the fattest organ of the body?",
         multipleAnswers: ["Stomach", "Liver", "Brain", "intestines"],
         rightAnswer: "Brain",
     },
@@ -239,7 +239,7 @@ const questionsLevel2 = {
         rightAnswer: "Higgs Boson",
     },
     78: {
-        question: "Who is the creator of the Game of Thrones Music",
+        question: "Who is the creator of the Game of Thrones Music?",
         multipleAnswers: ["Howard Shore", "Ramin Djawadi", "Elton John", "Hanz Zimmer"],
         rightAnswer: "Ramin Djawadi",
     },
@@ -259,7 +259,7 @@ const questionsLevel2 = {
         rightAnswer: "Line",
     },
     96: {
-        question: "How salt is known in chemistry ?",
+        question: "How salt is known in chemistry?",
         multipleAnswers: ["Sodium Chloride", "Calcium Chloride", "Sodium Iodide", "Carbon dioxide"],
         rightAnswer: "Sodium Chloride",
     }
