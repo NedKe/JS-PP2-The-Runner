@@ -48,7 +48,7 @@ let gameTime;
 let timer = document.querySelector("#stop-watch")
 
 function resetTimer() {
-    gameTime = 2;
+    gameTime = 60;
     timer.innerHTML = gameTime + "";
 }
 resetTimer();
