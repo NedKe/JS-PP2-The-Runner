@@ -6,27 +6,6 @@ let currentDiceIcon = 'fa-dice';
 function toss() {
     return 1 + Math.floor(Math.random() * 6);
 }
-/* 
-font-awesome classes are like fa-dice-one, fa-dice-two, etc
-This is a helper function to convert number 1 to 'one' and 2 to 'two' etc
-*/
-function convertDigitToCharacter(digit) {
-    switch (digit) {
-        case 1:
-            return 'one';
-        case 2:
-            return 'two';
-        case 3:
-            return 'three';
-        case 4:
-            return 'four';
-        case 5:
-            return 'five';
-        case 6:
-            return 'six';
-    }
-}
-
 // Event listener on the dice icon to handle the click
 dice.addEventListener('click', function () {
     const randomValue = toss();

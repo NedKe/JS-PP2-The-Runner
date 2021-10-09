@@ -210,23 +210,6 @@ function hideQuestionPopup() {
 
 
 
-//Game sound function taken from the W3schools.
-function sound(src, loop) {
-    this.sound = document.createElement("audio");
-    this.sound.src = src;
-    this.sound.setAttribute("preload", "auto");
-    this.sound.setAttribute("controls", "none");
-    this.sound.style.display = "none";
-    document.body.appendChild(this.sound);
-    this.play = function () {
-        this.sound.play();
-        this.sound.loop = loop;
-    }
-    this.stop = function () {
-        this.sound.pause();
-    }
-}
-
 // Functions hiding start pop up and showing/hididng end pop up when game is finished.
 function hideStartPopup() {
     StarGamePopup.style.visibility = "hidden";
