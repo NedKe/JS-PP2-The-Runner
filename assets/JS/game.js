@@ -13,7 +13,10 @@ const resultMsg = document.querySelector("#result");
 const levelPopup = document.querySelector("#choose-level");
 const levelBasicBtn = document.querySelector("#choose-level #basic");
 const levelHardBtn = document.querySelector("#choose-level #hard");
+const timer = document.querySelector("#stop-watch");
 
+let gameTime;
+let timerId;
 let backgroundMusicOn = true;
 let currentPosition = 0;
 let tempPosition;
@@ -83,24 +86,12 @@ function initializeEventListeners() {
     //End of event listener for buttons basic and hard
 }
 
-
-//Function calling the two functions generating increases and questions
-function drawIncreasesAndQuestions() {
-    drawIncreases();
-    drawQuestions();
-}
-
 //Stop watch function
-let gameTime;
-let timer = document.querySelector("#stop-watch")
-
 function resetTimer() {
     gameTime = 60;
     timer.innerHTML = gameTime + "";
 }
-resetTimer();
 
-let timerId;
 
 function countDown() {
     timerId = setInterval(function () {
@@ -165,6 +156,13 @@ function move(randomNumber) {
     }, 500);
 }
 //End of move function
+
+
+//Function calling the two functions generating increases and questions
+function drawIncreasesAndQuestions() {
+    drawIncreases();
+    drawQuestions();
+}
 
 // Functions generating the content of the game from the objects defined in challenges, based on game level.
 function drawIncreases() {
@@ -257,5 +255,11 @@ function createCheckedPattern() {
         }
     }
 }
-initializeEventListeners();
-createCheckedPattern();
+
+function initializeGame() {
+    initializeEventListeners();
+    createCheckedPattern();
+    resetTimer();
+}
+
+initializeGame();
