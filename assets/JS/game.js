@@ -27,7 +27,7 @@ function initializeLevel(chosenLevel) {
     countDown();
     levelPopup.classList.remove("show");
     createCheckedPattern();
-    drawIncreasesAndQuestions();
+    drawChallenges();
     dice.disabled = false;
 }
 
@@ -57,7 +57,7 @@ function initializeEventListeners() {
         }
     })
     submitBtn.addEventListener('click', function () {
-        hidePopup();
+        hideQuestionPopup();
         dice.disabled = false;
     })
     submitBtn.addEventListener('click', function () {
@@ -99,7 +99,7 @@ function countDown() {
         timer.innerHTML = gameTime + "";
         if (gameTime === 0) {
             if (currentPosition < 99) {
-                showEndPopup("You lost!");
+                endGame("You lost!");
             }
             clearInterval(timerId);
         }
@@ -133,7 +133,7 @@ function move(randomNumber) {
             currentPosition = 99;
             clearInterval(timerId);
             clearInterval(id);
-            showEndPopup("Well done!");
+            endGame("Well done!");
         }
         blocks[tempPosition].appendChild(user);
         if (tempPosition === currentPosition) {
@@ -148,7 +148,7 @@ function move(randomNumber) {
                 const mySound = new sound("assets/music/question.wav", false)
                 mySound.play();
                 createOptions(answers);
-                showPopup();
+                showQuestionPopup();
                 dice.disabled = true;
             }
             clearInterval(id);
@@ -157,15 +157,23 @@ function move(randomNumber) {
 }
 //End of move function
 
+//Function generating multiple options for answers
+function createOptions(answers) {
+    answersContainer.innerHTML = "";
+    for (let i in answers) {
+        answersContainer.insertAdjacentHTML("beforeend", `<input id="fanswer-${i}" type="radio" name="answer" value="${answers[i]}"><label for="fanswer-${i}">${answers[i]}</label><br>`);
+    }
+}
+
 
 //Function calling the two functions generating increases and questions
-function drawIncreasesAndQuestions() {
-    drawIncreases();
+function drawChallenges() {
+    drawRewardPunishment();
     drawQuestions();
 }
 
 // Functions generating the content of the game from the objects defined in challenges, based on game level.
-function drawIncreases() {
+function drawRewardPunishment() {
     let rewardPunishment;
     if (level === 1) {
         rewardPunishment = increases;
@@ -189,19 +197,13 @@ function drawQuestions() {
         blocks[key].innerHTML = '?'
     }
 }
-//Function generating multiple options for answers
-function createOptions(answers) {
-    answersContainer.innerHTML = "";
-    for (let i in answers) {
-        answersContainer.insertAdjacentHTML("beforeend", `<input id="fanswer-${i}" type="radio" name="answer" value="${answers[i]}"><label for="fanswer-${i}">${answers[i]}</label><br>`);
-    }
-}
+
 //Functions showing and hiding questions and multioption answers.
-function showPopup() {
+function showQuestionPopup() {
     questionAnswersPopup.classList.add("visible")
 }
 
-function hidePopup() {
+function hideQuestionPopup() {
     questionAnswersPopup.classList.remove("visible")
 }
 //End of functions showing and hiding questions and multioption answers.
@@ -233,8 +235,12 @@ function hideStartPopup() {
 function showEndPopup(message) {
     resultMsg.innerHTML = message;
     EndGamePopup.style.visibility = "visible";
+}
+
+function endGame(message) {
+    showEndPopup(message);
     dice.disabled = true;
-    hidePopup();
+    hideQuestionPopup();
 }
 
 function hideEndPopup() {
