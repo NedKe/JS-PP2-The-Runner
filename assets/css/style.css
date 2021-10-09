@@ -11,7 +11,15 @@ body {
     background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23edc1be' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
 }
 
+#control-panel {
+    display: flex;
+    justify-content: space-between;
+}
+
 #stop-watch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100px;
     height: 100px;
     font-family: 'Playball', cursive;
@@ -118,9 +126,9 @@ body {
 
 #dice~div {
     font-family: 'Indie Flower', cursive;
-    margin-left: 42%;
     margin-top: 20px;
     font-size: 30px;
+    text-align: center;
 }
 
 
@@ -213,6 +221,7 @@ footer {
 footer nav a {
     font-size: 25px;
     color: #000;
+    padding: 10px;
 }
 
 footer .social_media i {
@@ -275,19 +284,19 @@ input[type=submit] {
         font-size: 2rem;
     }
 
-    #stop-watch {
-        right: 30%;
-    }
-
-    #mute {
-        left: 5%;
-    }
-
     #game {
         width: 286px;
         height: 286px;
-        grid-template: repeat(10, 25px) / repeat(10, 25px);
+        grid-template: repeat(10, 26px) / repeat(10, 26px);
+        box-shadow: 2px 2px;
     }
+
+    #game>div::after {
+        font-size: 7px;
+        bottom: 2px;
+        right: 2px;
+    }
+
 
     .popup-gameStart {
         width: 300px;
@@ -323,6 +332,10 @@ input[type=submit] {
         padding: 10px 20px;
     }
 
+    footer h1 {
+        padding-right: 10px;
+    }
+
     footer nav a {
         padding: 10px;
         justify-items: center;
@@ -330,11 +343,6 @@ input[type=submit] {
 
     #dice {
         margin-left: 40%;
-    }
-
-
-    #dice~div {
-        margin-left: 28%;
     }
 
     .contact-form {
@@ -352,15 +360,21 @@ input[type=submit] {
 
     #stop-watch,
     #mute {
+        position: relative;
         width: 80px;
         height: 80px;
-        top: 25px;
-        right: 25%;
     }
 
+    #control-panel {
+        width: 286px;
+        position: absolute;
+        left: 50%;
+        top: 20px;
+        transform: translate(-50%);
+    }
 
     #mute {
-        left: 25%;
+
         font-size: 18px;
     }
 
