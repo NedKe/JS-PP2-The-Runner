@@ -206,8 +206,9 @@ footer {
     justify-content: space-between;
     width: 80%;
     margin: 0 auto;
-    padding: 10px 0;
+    padding: 20px 0px;
     border-top: 1px solid #000;
+    margin-top: 20px;
 }
 
 footer nav a {
