@@ -169,8 +169,8 @@ function move(randomNumber) {
         } else {
             --tempPosition;
         }
-        if (currentPosition >= 99) {
-            currentPosition = 99;
+        if (tempPosition >= 99) {
+            tempPosition = 99;
             clearInterval(timerId);
             clearInterval(id);
             endGame(1);
