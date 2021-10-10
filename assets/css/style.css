@@ -1,8 +1,11 @@
 /*Global styles*/
+@import url("https://fonts.googleapis.com/css2?family=Gluten&family=Mulish&display=swap");
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Gluten", cursive;
 }
 
 body {
@@ -13,42 +16,30 @@ body {
 
 #control-panel {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
-#stop-watch {
+#control-panel #stop-watch,
+#control-panel #mute {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100px;
     height: 100px;
-    font-family: 'Playball', cursive;
+    background: #fff;
+
     font-size: 3rem;
     border: 5px solid #000;
     border-radius: 50%;
     text-align: center;
     position: absolute;
+    text-transform: capitalize;
     right: 10%;
     top: 20%;
 }
 
-#answers {
-    text-align: left;
-    padding: 0 40px;
-}
-
-
-
-#mute {
-    width: 100px;
-    height: 100px;
-    font-family: 'Indie Flower', cursive;
+#control-panel #mute {
     font-size: 1.5rem;
-    text-transform: capitalize;
-    border: 5px solid #000;
-    border-radius: 50%;
-    padding: 10px;
-    position: absolute;
     left: 10%;
     top: 20%;
 }
@@ -67,35 +58,39 @@ body {
     box-shadow: 4px 4px;
 }
 
-
-
-#game>div {
+#game > div {
     background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Explora', cursive;
+    font-size: 30px;
     position: relative;
 }
 
-#game>div::after {
+#game > div::after {
     counter-increment: block;
     content: counter(block);
     position: absolute;
     right: 3px;
     bottom: 3px;
+    font-size: 14px;
 }
 
 #game #user {
-    width: 20px;
-    height: 20px;
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50px;
     background: orange;
+    opacity: 0.8;
+    font-size: 1.4rem;
 }
 
 #choose-level {
     display: none;
-    font-family: 'Indie Flower', cursive;
     font-size: 2rem;
     background-color: #edf8fa;
     border-radius: 10px;
@@ -124,17 +119,14 @@ body {
     margin-left: 47%;
 }
 
-#dice~div {
-    font-family: 'Indie Flower', cursive;
+#dice ~ div {
     margin-top: 20px;
     font-size: 30px;
     text-align: center;
 }
 
-
-.popup-form {
+.question-popup {
     visibility: hidden;
-    font-family: 'Indie Flower', cursive;
     width: 400px;
     text-align: center;
     position: absolute;
@@ -148,12 +140,19 @@ body {
     background-color: #fff;
 }
 
-.popup-form.visible {
+.question-popup.visible {
     visibility: visible;
 }
 
-.popup-form #submit button {
-    font-family: 'Indie Flower', cursive;
+.question-popup #answers {
+    text-align: left;
+    padding: 10px 80px;
+}
+.question-popup #answers label {
+    margin-left: 5px;
+}
+
+.question-popup #submit button {
     font-size: 1rem;
     padding: 10px;
     background-color: #cbeaf1;
@@ -161,7 +160,6 @@ body {
 }
 
 .popup-gameStart {
-    font-family: 'Indie Flower', cursive;
     width: 600px;
     text-align: center;
     position: absolute;
@@ -176,7 +174,6 @@ body {
 
 .popup-gameEnd {
     visibility: hidden;
-    font-family: 'Indie Flower', cursive;
     font-size: 3rem;
     width: 300px;
     height: 250px;
@@ -191,13 +188,10 @@ body {
     background-color: #edf8fa;
 }
 
-
-
 #startBtn,
 #restartBtn,
 #basic,
 #hard {
-    font-family: 'Indie Flower', cursive;
     font-size: 2rem;
     margin-top: 10px;
     padding: 10px;
@@ -210,13 +204,11 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: 'Indie Flower', cursive;
     width: 80%;
     margin: 0 auto;
     padding: 10px 0;
     border-top: 1px solid #000;
 }
-
 
 footer nav a {
     font-size: 25px;
@@ -231,7 +223,7 @@ footer .social_media i {
 }
 
 footer .social_media i:hover,
-footer>h1:hover,
+footer > h1:hover,
 footer nav a:hover {
     color: rgb(112, 2, 2);
 }
@@ -249,7 +241,7 @@ footer nav a:hover {
     padding: 30px;
 }
 
-.form>h2 {
+.form > h2 {
     color: #000;
     margin-bottom: 20px;
 }
@@ -267,8 +259,8 @@ footer nav a:hover {
     border-radius: 2px;
 }
 
-input[type=submit] {
-    font-family: 'EB Garamond', serif;
+input[type="submit"] {
+    font-family: "EB Garamond", serif;
     font-size: 15px;
     padding: 5px;
     min-height: 27px;
@@ -276,9 +268,13 @@ input[type=submit] {
 
 /* Media query for screen sizes from 700px wide and down*/
 @media screen and (max-width: 700px) {
-
-    #stop-watch,
-    #mute {
+    #game #user {
+        width: 18px;
+        height: 18px;
+        font-size: 0.8rem;
+    }
+    #control-panel #stop-watch,
+    #control-panel #mute {
         width: 40px;
         height: 40px;
         font-size: 2rem;
@@ -290,16 +286,17 @@ input[type=submit] {
         grid-template: repeat(10, 26px) / repeat(10, 26px);
         box-shadow: 2px 2px;
     }
-
-    #game>div::after {
+    #game > div {
+        font-size: 18px;
+    }
+    #game > div::after {
         font-size: 7px;
         bottom: 2px;
         right: 2px;
     }
 
-
     .popup-gameStart {
-        width: 300px;
+        width: 94%;
         top: 60%;
         left: 50%;
     }
@@ -309,15 +306,14 @@ input[type=submit] {
         left: 50%;
     }
 
-    .popup-form {
+    .question-popup {
         width: 350px;
         font-size: 15px;
         top: 45%;
     }
 
     #choose-level {
-        width: 300px;
-        height: 350px;
+        width: 90%;
         top: 60%;
         left: 50%;
     }
@@ -358,13 +354,6 @@ input[type=submit] {
         top: 80px;
     }
 
-    #stop-watch,
-    #mute {
-        position: relative;
-        width: 80px;
-        height: 80px;
-    }
-
     #control-panel {
         width: 286px;
         position: absolute;
@@ -373,9 +362,11 @@ input[type=submit] {
         transform: translate(-50%);
     }
 
-    #mute {
-
-        font-size: 18px;
+    #control-panel #stop-watch,
+    #control-panel #mute {
+        position: relative;
+        width: 80px;
+        height: 80px;
     }
 
     #dice {
