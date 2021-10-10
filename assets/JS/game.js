@@ -159,6 +159,7 @@ function move(randomNumber) {
             clearInterval(id);
             endGame("Well done!");
         }
+        new sound("assets/music/single-footstep.mp3", false).play();
         blocks[tempPosition].appendChild(user);
         if (tempPosition === currentPosition) {
             dice.disabled = false;
