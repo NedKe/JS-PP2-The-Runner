@@ -100,7 +100,7 @@ const questions = {
     17: {
         question: "Where was pizza invented?",
         multipleAnswers: ["Spain", "Greece", "Italy", "Germany"],
-        rightAnswer: 9
+        rightAnswer: "Italy"
     },
     24: {
         question: "Which book belongs to George Orwell?",
@@ -110,12 +110,12 @@ const questions = {
             "1984",
             "Wuthering Heights"
         ],
-        rightAnswer: 9
+        rightAnswer: "1984"
     },
     29: {
         question: "What the capital of Eduador?",
         multipleAnswers: ["Santo Domingo", "Quito", "San Jose", "Brasilia"],
-        rightAnswer: 9
+        rightAnswer: "Quito"
     },
     32: {
         question: "Which composer composed Für Elise?",
