@@ -1,9 +1,11 @@
 const user = document.querySelector("#game #user");
 const blocks = document.querySelectorAll("#game > div");
-const questionAnswersPopup = document.getElementsByClassName("popup-form")[0];
-const submitBtn = document.querySelector(".popup-form #submit button");
-const questionContainer = document.querySelector(".popup-form #question");
-const answersContainer = document.querySelector(".popup-form #answers");
+const questionAnswersPopup = document.getElementsByClassName(
+    "question-popup"
+)[0];
+const submitBtn = document.querySelector(".question-popup #submit button");
+const questionContainer = document.querySelector(".question-popup #question");
+const answersContainer = document.querySelector(".question-popup #answers");
 const dice = document.getElementById("dice");
 const StarGamePopup = document.getElementsByClassName("popup-gameStart")[0];
 const EndGamePopup = document.getElementsByClassName("popup-gameEnd")[0];
@@ -26,30 +28,32 @@ let currentDiceIcon = "fa-dice";
 /* Storing the value of the current icon class , fa-dice, so that we remove it when 
 we roll the dice and add the new value.*/
 function toss() {
-    return 1 + Math.floor(Math.random() * 6);
+    return 3;
+    // return 1 + Math.floor(Math.random() * 6);
 }
 
 function initializeLevel(chosenLevel) {
     level = chosenLevel;
     countDown();
     levelPopup.classList.remove("show");
-    createCheckedPattern();
+    createBoard();
     drawChallenges();
     dice.disabled = false;
 }
 
+function changeDice(diceValue) {
+    // remove the current icon's dice class
+    icon.classList.remove(currentDiceIcon);
+    // update the current dice icon with the new value based on toss and convert it to the fa dice class respective to the number
+    currentDiceIcon = diceValue;
+    // add the new dice class to the icon
+    icon.classList.add(currentDiceIcon);
+}
 function initializeEventListeners() {
     // Event listener on the dice icon to handle the click
     dice.addEventListener("click", function() {
         const randomValue = toss();
-        console.log(randomValue);
-        // remove the current icon's dice class
-        icon.classList.remove(currentDiceIcon);
-        // update the current dice icon with the new value based on toss and convert it to the fa dice class respective to the number
-        currentDiceIcon = `fa-dice-${convertDigitToCharacter(randomValue)}`;
-
-        // add the new dice class to the icon
-        icon.classList.add(currentDiceIcon);
+        changeDice(`fa-dice-${convertDigitToCharacter(randomValue)}`);
         move(randomValue);
     });
     //Event listener for buttons basic and hard
@@ -99,11 +103,8 @@ function initializeEventListeners() {
         hideEndPopup();
         currentPosition = 0;
         resetTimer();
-        blocks[currentPosition].appendChild(user);
         levelPopup.classList.add("show");
     });
-    //End of eventlistener on all buttons
-    //End of event listener for buttons basic and hard
 }
 
 //Stop watch function
@@ -143,6 +144,10 @@ function move(randomNumber) {
 
     dice.disabled = true;
     let id = setInterval(function() {
+        if (gameTime === 0) {
+            clearInterval(id);
+            return;
+        }
         if (randomNumber > 0) {
             ++tempPosition;
         } else {
@@ -157,11 +162,11 @@ function move(randomNumber) {
         blocks[tempPosition].appendChild(user);
         if (tempPosition === currentPosition) {
             dice.disabled = false;
-            checkIfRewardOrPunishment(currentPosition, rewardPunishment);
             checkAndShowQuestionForCurrentPosition(
                 currentPosition,
                 currentQuestions
             );
+            checkIfRewardOrPunishment(currentPosition, rewardPunishment);
             clearInterval(id);
         }
     }, 500);
@@ -261,12 +266,10 @@ function hideEndPopup() {
     EndGamePopup.style.visibility = "hidden";
 }
 // Function creating checked patten on the board when page loads and resets the board when game is restarted.
-function createCheckedPattern() {
+function createBoard() {
     for (let i = 0; i < 10; i++) {
         for (let j = 0; j < 10; j++) {
-            if (i !== 0 && j !== 0) {
-                blocks[10 * i + j].innerHTML = "";
-            }
+            blocks[10 * i + j].innerHTML = "";
             if (j % 2 === (i % 2 === 0 ? 0 : 1)) {
                 blocks[10 * i + j].style.backgroundColor = "#cbeaf1";
             } else {
@@ -274,11 +277,13 @@ function createCheckedPattern() {
             }
         }
     }
+    blocks[currentPosition].appendChild(user);
 }
 
 function initializeGame() {
+    dice.disabled = true;
     initializeEventListeners();
-    createCheckedPattern();
+    createBoard();
     resetTimer();
 }
 
