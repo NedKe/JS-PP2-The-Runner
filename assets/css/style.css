@@ -27,7 +27,7 @@ body {
     width: 100px;
     height: 100px;
     background: #fff;
-
+    z-index: 10;
     font-size: 3rem;
     border: 5px solid #000;
     border-radius: 50%;
@@ -43,7 +43,34 @@ body {
     left: 10%;
     top: 20%;
 }
+.game-items {
+    position: relative;
+}
 
+.game-items #notifications {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 60px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 1px 1px 5px #000, 0 0 1em rgba(0, 0, 0, 0.4);
+}
+.game-items #notifications > div {
+    position: absolute;
+    left: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -70px);
+    transition: opacity 1s, visibility 1s, transform 1s;
+}
+.game-items #notifications > div.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
 #game {
     margin: 40px auto;
     display: grid;

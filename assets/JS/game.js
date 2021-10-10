@@ -16,6 +16,8 @@ const levelBasicBtn = document.querySelector("#choose-level #basic");
 const levelHardBtn = document.querySelector("#choose-level #hard");
 const timer = document.querySelector("#stop-watch");
 const icon = document.querySelector("#dice i");
+const successAlert = document.querySelector("#notifications #success");
+const failAlert = document.querySelector("#notifications #fail");
 
 const myBackgroundMusic = new sound("assets/music/background.mp3", true);
 const lostSound = new sound("assets/music/lost.wav", false);
@@ -33,8 +35,7 @@ let currentDiceIcon = "fa-dice";
 /* Storing the value of the current icon class , fa-dice, so that we remove it when 
 we roll the dice and add the new value.*/
 function toss() {
-    return 3;
-    // return 1 + Math.floor(Math.random() * 6);
+    return 1 + Math.floor(Math.random() * 6);
 }
 
 function initializeLevel(chosenLevel) {
@@ -100,9 +101,17 @@ function initializeEventListeners() {
         }
         if (userAnswer === currentQuestions[currentPosition].rightAnswer) {
             successSound.play();
+            successAlert.classList.add("show");
+            setTimeout(function() {
+                successAlert.classList.remove("show");
+            }, 1000);
             move(2);
         } else {
             failureSound.play();
+            failAlert.classList.add("show");
+            setTimeout(function() {
+                failAlert.classList.remove("show");
+            }, 1000);
             move(-2);
         }
     });
@@ -116,7 +125,7 @@ function initializeEventListeners() {
 
 //Stop watch function
 function resetTimer() {
-    gameTime = 60;
+    gameTime = 120;
     timer.innerHTML = gameTime + "";
 }
 
@@ -126,7 +135,7 @@ function countDown() {
         timer.innerHTML = gameTime + "";
         if (gameTime === 0) {
             if (currentPosition < 99) {
-                endGame("You lost!");
+                endGame(-1);
             }
             clearInterval(timerId);
         }
@@ -164,7 +173,7 @@ function move(randomNumber) {
             currentPosition = 99;
             clearInterval(timerId);
             clearInterval(id);
-            endGame("Well done!");
+            endGame(1);
         }
         new sound("assets/music/single-footstep.mp3", false).play();
         blocks[tempPosition].appendChild(user);
@@ -269,8 +278,15 @@ function showEndPopup(message) {
     EndGamePopup.style.visibility = "visible";
 }
 
-function endGame(message) {
-    showEndPopup(message);
+function endGame(status) {
+    if (status === -1) {
+        lostSound.play();
+        showEndPopup("You lost! 😔");
+    } else {
+        winSound.play();
+        showEndPopup("Well done! 😃");
+    }
+
     dice.disabled = true;
     hideQuestionPopup();
 }
