@@ -35,7 +35,6 @@ let currentDiceIcon = "fa-dice";
 /* Storing the value of the current icon class , fa-dice, so that we remove it when 
 we roll the dice and add the new value.*/
 function toss() {
-    return 4;
     return 1 + Math.floor(Math.random() * 6);
 }
 
@@ -228,7 +227,7 @@ function createOptions(answers) {
     for (let i in answers) {
         answersContainer.insertAdjacentHTML(
             "beforeend",
-            `<input id="fanswer-${i}" type="radio" name="answer" value="${answers[i]}"><label for="fanswer-${i}">${answers[i]}</label><br>`
+            `<div><input id="fanswer-${i}" type="radio" name="answer" value="${answers[i]}"><label for="fanswer-${i}">${answers[i]}</label></div>`
         );
     }
 }
