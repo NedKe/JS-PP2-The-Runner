@@ -35,6 +35,7 @@ let currentDiceIcon = "fa-dice";
 /* Storing the value of the current icon class , fa-dice, so that we remove it when 
 we roll the dice and add the new value.*/
 function toss() {
+    return 4;
     return 1 + Math.floor(Math.random() * 6);
 }
 
@@ -203,12 +204,18 @@ function checkAndShowQuestionForCurrentPosition(
     currentQuestions
 ) {
     if (currentPosition in currentQuestions) {
+        submitBtn.disabled = true;
         let question = currentQuestions[currentPosition].question;
         questionContainer.innerHTML = question;
         let answers = currentQuestions[currentPosition].multipleAnswers;
         const mySound = new sound("assets/music/question.wav", false);
         mySound.play();
         createOptions(answers);
+        document.querySelectorAll("[name='answer']").forEach(function(option) {
+            option.addEventListener("change", function() {
+                submitBtn.disabled = false;
+            });
+        });
         showQuestionPopup();
         dice.disabled = true;
     }
