@@ -9,7 +9,6 @@ const answersContainer = document.querySelector(".question-popup #answers");
 const dice = document.getElementById("dice");
 const StarGamePopup = document.getElementsByClassName("popup-gameStart")[0];
 const EndGamePopup = document.getElementsByClassName("popup-gameEnd")[0];
-const myBackgroundMusic = new sound("assets/music/background.mp3", true);
 const muteBtn = document.querySelector("#mute");
 const resultMsg = document.querySelector("#result");
 const levelPopup = document.querySelector("#choose-level");
@@ -17,6 +16,12 @@ const levelBasicBtn = document.querySelector("#choose-level #basic");
 const levelHardBtn = document.querySelector("#choose-level #hard");
 const timer = document.querySelector("#stop-watch");
 const icon = document.querySelector("#dice i");
+
+const myBackgroundMusic = new sound("assets/music/background.mp3", true);
+const lostSound = new sound("assets/music/lost.wav", false);
+const winSound = new sound("assets/music/win.wav", false);
+const successSound = new sound("assets/music/success.wav");
+const failureSound = new sound("assets/music/invalid.wav");
 let gameTime;
 let timerId;
 let backgroundMusicOn = true;
@@ -94,8 +99,10 @@ function initializeEventListeners() {
             currentQuestions = questionsLevel2;
         }
         if (userAnswer === currentQuestions[currentPosition].rightAnswer) {
+            successSound.play();
             move(2);
         } else {
+            failureSound.play();
             move(-2);
         }
     });
@@ -174,6 +181,11 @@ function move(randomNumber) {
 }
 function checkIfRewardOrPunishment(currentPosition, rewardPunishment) {
     if (currentPosition in rewardPunishment) {
+        if (rewardPunishment[currentPosition].value < 0) {
+            failureSound.play();
+        } else {
+            successSound.play();
+        }
         move(rewardPunishment[currentPosition].value);
     }
 }
