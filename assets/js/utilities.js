@@ -20,10 +20,12 @@ function sound(src, loop) {
         this.sound.pause();
     };
 }
-/* 
-font-awesome classes are like fa-dice-one, fa-dice-two, etc
-This is a helper function to convert number 1 to 'one' and 2 to 'two' etc
-*/
+
+/**
+ * Helper function to convert a digit number to respective word character
+ * @param {number} digit
+ * @returns {string} the word equivalent to the digit from parameter
+ */
 function convertDigitToCharacter(digit) {
     switch (digit) {
         case 1:
