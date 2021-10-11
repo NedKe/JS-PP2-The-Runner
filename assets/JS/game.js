@@ -94,18 +94,16 @@ function initializeEventListeners() {
         if (backgroundMusicOn) {
             myBackgroundMusic.stop();
             backgroundMusicOn = false;
-            muteBtn.innerHTML = "Unmute";
         } else {
             myBackgroundMusic.play();
             backgroundMusicOn = true;
-            muteBtn.innerHTML = "mute";
         }
+        toggleMute();
     });
+
     submitBtn.addEventListener("click", function() {
         hideQuestionPopup();
         dice.disabled = false;
-    });
-    submitBtn.addEventListener("click", function() {
         let userAnswer = document.querySelector("[name='answer']:checked")
             .value;
         let currentQuestions;
@@ -139,10 +137,18 @@ function initializeEventListeners() {
 }
 
 /**
+ * Toggles mute/unmute icon
+ */
+function toggleMute() {
+    muteBtn.querySelector("i").classList.toggle("fa-volume-down");
+    muteBtn.querySelector("i").classList.toggle("fa-volume-mute");
+}
+
+/**
  * Resets the timer by setting the gameTime variable to 120 and showing that in the timer element in the page
  */
 function resetTimer() {
-    gameTime = 120;
+    gameTime = 10;
     timer.innerHTML = gameTime + "";
 }
 
