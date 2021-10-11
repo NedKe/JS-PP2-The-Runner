@@ -24,6 +24,8 @@ const lostSound = new sound("assets/music/lost.wav", false);
 const winSound = new sound("assets/music/win.wav", false);
 const successSound = new sound("assets/music/success.wav");
 const failureSound = new sound("assets/music/invalid.wav");
+
+const gameDuration = 120;
 let gameTime;
 let timerId;
 let backgroundMusicOn = true;
@@ -148,7 +150,7 @@ function toggleMute() {
  * Resets the timer by setting the gameTime variable to 120 and showing that in the timer element in the page
  */
 function resetTimer() {
-    gameTime = 10;
+    gameTime = gameDuration;
     timer.innerHTML = gameTime + "";
 }
 
