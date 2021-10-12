@@ -242,13 +242,13 @@ The contact form in the page contact us, allow the user to leave feedback to the
 
 ### HTML and CSS Validation
 
-The HTML and CSS code is validated by W3C HTML and CSS jigsaw validation service, respectively, and no error was detected on the final version of all the HTML pages and CSS stylesheet.
+The HTML and CSS code is validated by W3C HTML (https://validator.w3.org/) and CSS jigsaw validation service (https://jigsaw.w3.org/css-validator/), respectively, and no error was detected on the final version of all the HTML pages and CSS stylesheet.
 
-<details><summary>Full page</summary>
-<img src="docs/validation/css-validation-full-page.jpg">
+<details><summary>The hompage and contact us page</summary>
+<img src="docs/validations/html-w3validator.png">
 </details>
-<details><summary>style.css</summary>
-<img src="docs/validation/css-validation-custom-css.jpg">
+<details><summary>The CSS stylesheet</summary>
+<img src="docs/validations/css-jigsaw.png">
 </details>
 
 ### JavaScript Validation
