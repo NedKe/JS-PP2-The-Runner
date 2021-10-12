@@ -2,7 +2,7 @@
 
 Developer: Neda Keshavarzi
 
-![Mockup image](docs/mockup.jpg)
+![Mockup image](docs/mockup.png)
 
 [Live webpage](https://nedke.github.io/JS-PP2-The-Runner/)
 
@@ -155,7 +155,7 @@ The header is skipped in this website to make more room for the game board. When
 The footer consists of a text logo that is the name of the game, the navigation menu, and social media links. The footer design satisfies the points mentioned in user (h) and website owner stories (j).
 
 <details><summary>Footer</summary>
-<img src="docs/features/feature-footer.jpg">
+<img src="docs/footer.png">
 </details>
 
 ### Homepage start view
@@ -163,7 +163,7 @@ The footer consists of a text logo that is the name of the game, the navigation 
 The start page gives an introduction to the game and has a start game button. When the user clicks on the start game button, the introduction box disappears, and a new window pops up and game music is played. The user can see the sound mute option, stop-watch, dice icon, and the game board behind the start window.
 
 <details><summary>Homepage start view</summary>
-<img src="docs/features/feature-start-screen.jpg">
+<img src="docs/homepage-start.png">
 </details>
 
 ### Game view
@@ -173,28 +173,28 @@ The start page gives an introduction to the game and has a start game button. Wh
     -   The game board populated with basic level challenges
     -   The game board populated with hard level challenges
     -   Question and answer popup when arriving at blocks with a question mark
-    -   The congrats popup when the correct answer selected
-    -   The OH No pop up when an incorrect answer selected
+    -   The congrats popup when the correct answer is submitted
+    -   The OH No pop up when an incorrect answer is submitted
     -   The "You lost" popup when game time is over, and the user lost the game
     -   The "Well done" popup when user wins the game
 
 <details><summary>Game level selection popup</summary>
-<img src="docs/features/feature-game-screen.jpg">
+<img src="docs/game-levels.png">
 </details>
 <details><summary>Game view basic level</summary>
-<img src="docs/features/feature-game-screen.jpg">
+<img src="docs/game-level-basic.png">
 </details>
 <details><summary>Game view hard level</summary>
-<img src="docs/features/feature-game-screen.jpg">
+<img src="docs/game-level-hard.png"">
 </details>
 <details><summary>Question and answer popup</summary>
-<img src="docs/features/feature-game-screen.jpg">
+<img src="docs/question-pupup.png">
 </details>
-<details><summary>The Congrats popup</summary>
-<img src="docs/features/feature-game-screen.jpg">
+<details><summary>The congrats popup</summary>
+<img src="docs/congrats.png">
 </details>
-<details><summary>The OH NO! popup</summary>
-<img src="docs/features/feature-game-screen.jpg">
+<details><summary>The oh no! popup</summary>
+<img src="docs/ohno.png">
 </details>
 
 ### Game loss popup
@@ -202,13 +202,13 @@ The start page gives an introduction to the game and has a start game button. Wh
 If the game time is over before reaching the final block, the user loses t and sees a popup window and a sound, both visual and auditory clues. There is a restart button in the popup that redirects the user to the level selection section.
 
 <details><summary>Game loss</summary>
-<img src="docs/features/feature-game-over-screen.jpg">
+<img src="docs/game-loss.png">
 </details>
 
 ### Game win popup
 
 <details><summary>Game win</summary>
-<img src="docs/features/feature-correct-screen.jpg">
+<img src="docs/game-win.png">
 </details>
 
 ### Page Contact us
@@ -216,15 +216,15 @@ If the game time is over before reaching the final block, the user loses t and s
 The contact form in the page contact us, allow the user to leave feedback to the website owner.
 
 <details><summary>Contact Form</summary>
-<img src="docs/features/feature-contact-form.jpg">
+<img src="docs/contact-us.png">
 </details>
 
 ### Form Confirmation popup
 
--   When the user submits the feedback, the thank you page pops up to confirm the submision, and has a button to let user to go back to the game.This part satisfies the user story (g).
+-   When the user submits the feedback, the thank you page pops up to confirm the submission and has a button to let the user go back to the game. This part satisfies the user story (g).
 
 <details><summary>Form confirmation</summary>
-<img src="docs/features/feature-form-confirmation.jpg">
+<img src="docs/thank-you.png">
 </details>
 
 ## Validation
