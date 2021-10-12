@@ -2,7 +2,7 @@
 
 Developer: Neda Keshavarzi
 
-![Mockup image](docs/mockup.png)
+![Mockup image](docs/game-features/mockup.png)
 
 [Live webpage](https://nedke.github.io/JS-PP2-The-Runner/)
 
