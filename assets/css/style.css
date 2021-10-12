@@ -352,8 +352,7 @@ footer nav a:hover {
     font-size: 16px;
 }
 #contact-page main #contact-form input[type="submit"] {
-    background-color: #51b3c9;
-    border: 2px solid #1d6271;
+    background-color: #000;
     padding: 10px;
     color: #fff;
     font-size: 16px;
