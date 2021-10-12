@@ -429,6 +429,11 @@ footer nav a:hover {
         padding-right: 10px;
     }
 
+    footer nav,
+    footer .social_media {
+        margin-top: 20px;
+    }
+
     footer nav a {
         padding: 10px;
         justify-items: center;
