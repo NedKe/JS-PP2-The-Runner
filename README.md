@@ -17,13 +17,13 @@ Developer: Neda Keshavarzi
     3. [User Stories](#user-stories)
     4. [Website Owner Stories](#website-owner-stories)
 3. [Design](#design)
-    1. [Design Choices](#design-choices)
+    1. [Design idea](#design-idea)
     2. [Structure](#structure)
     3. [Fonts](#fonts)
-    4. [Wireframes](#wireframes)
+    4. [Sounds](#sounds)
 4. [Technologies Used](#technologies-used)
     1. [Languages](#languages)
-    2. [Frameworks & Tools](#frameworks-&-tools)
+    2. [Tools](#tools)
 5. [Features](#features)
 6. [Testing](#validation)
     1. [HTML Validation](#HTML-validation)
@@ -113,7 +113,7 @@ The website is designed based on the idea from the classic snake and ladder game
     -   Well done message and a sound popping up when the user wins the game
 
 -   The page contact us contains a form that allows the user to submit feedback to the website owner.
-    -   A thank you popup shows up after submitting the feedback that has the button to let the user return to the game
+    -   A thank you popup shows up after submitting the feedback.
 
 ### Sounds
 
@@ -273,21 +273,32 @@ JSHint Static Code Analysis Tool for JavaScript is used to validate the Javascri
 The accessibility for users with impairment is checked by WAVE evaluation tool (https://wave.webaim.org/), and the report showed no error for all pages.
 
 <details><summary>Homepage</summary>
-<img src="docs/validation/accessibility-evaluation-index.jpg">
+<img src="docs/validations/accessibility-index.png">
 </details>
 <details><summary>Contact us</summary>
-<img src="docs/validation/accessibility-evaluation-contact.jpg">
+<img src="docs/validations/accessibility-contact.png">
 </details>
 
 ### Performance
 
-The accessibility and performance is tested by the Lighthouse for mobile and desktop.
+The accessibility and performance is tested by the Lighthouse for mobile and desktop. No significant error was found.
+
+-   Desktop
 
 <details><summary>Homepage</summary>
-<img src="docs/validation/performance-lighthouse-index.jpg">
+<img src="docs/validations/desktop - index.png">
 </details>
 <details><summary>Contact</summary>
-<img src="docs/validation/performance-lighthouse-contact.jpg">
+<img src="docs/validations/desktop - contact.png">
+</details>
+
+-   Mobile
+
+<details><summary>Homepage</summary>
+<img src="docs/validations/mobile - index.png">
+</details>
+<details><summary>Contact</summary>
+<img src="docs/validations/mobile - contact.png">
 </details>
 
 ### Responsive
@@ -356,9 +367,11 @@ You can clone the repository by following these steps:
 
 -   Images
 -   Musics
--   Social media and runner icon
+-   Background music is Monkeys Spinning by Kevin MacLeod, taken from
+    https://www.chosic.com/free-music/all/?keyword=Monkeys%20Spinning
+-   The game sound popups are taken from https://freesound.org/
+-   Social media and the runner icon
     -   The social media icons are from Font Awesome
--   Emojis
 
 ### Coding material
 
