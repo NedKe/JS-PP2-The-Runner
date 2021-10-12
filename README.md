@@ -18,10 +18,9 @@ Developer: Neda Keshavarzi
     4. [Website Owner Stories](#website-owner-stories)
 3. [Design](#design)
     1. [Design Choices](#design-choices)
-    2. [Colour](#colours)
+    2. [Structure](#structure)
     3. [Fonts](#fonts)
-    4. [Structure](#structure)
-    5. [Wireframes](#wireframes)
+    4. [Wireframes](#wireframes)
 4. [Technologies Used](#technologies-used)
     1. [Languages](#languages)
     2. [Frameworks & Tools](#frameworks-&-tools)
@@ -98,53 +97,65 @@ As As the creator of the website I want users to,
 
 ## Design
 
-### Design Choices
+### Design idea
 
-The website is designed based on the idea from the classic snake and ladder game. To make a simpler graphic for the game,the snakes and ladders are replaced with rewards-punishments in green-red squares and question pop-ups that if answered correctly allow the user to move 2 squares forward and vice versa. The user gets feedback when selects a correct or incorrect answers and when is either rewrded or punished.
-
-### Fonts
-
-Google fonts and Font Awsome were used to style text and for icons.
+The website is designed based on the idea from the classic snake and ladder game. Here, the snakes and ladders are replaced with rewards-punishments in green-red blocks and question pop-ups that move the user back and forth. The user gets visual and auditory feedback when selects correct or incorrect answers.
 
 ### Structure
 
--   The homepage loads as the starting page and shows a welcome box that contains the introduction to the game. The following pop-ups are attached to the homepage:
+-   The homepage loads as the starting page and shows a welcome box that contains the introduction to the game. The following popups are attached to the homepage:
+
     -   pop up giving the option to pick up the game level
     -   pop up showing questions and answers
     -   congrats message and a sound popping up when the answer is correct
     -   OH NO! message and a sound popping up when the answer is incorrect
     -   You lost message and a sound popping up when the game time is over
     -   Well done message and a sound popping up when the user wins the game
--   contact us
 
-### Wireframes
+-   The page contact us contains a form that allows the user to submit feedback to the website owner.
+    -   A thank you popup shows up after submitting the feedback that has the button to let the user return to the game
 
-No wire frames was used.
+### Sounds
+
+-   When the user starts the game, the following sounds play:
+
+    -   Background music is played, when the game starts. The user can mute the music by clicking on the speaker at the top left of the game.
+    -   A walk sound when dice rolls and the user starts running
+    -   A sound alert when the user is in a question block
+    -   A sound alert when the user submits a correct answer
+    -   A sound alert when the user submits an incorrect answer
+    -   A sound alert when the user is in a green block
+    -   A sound alert when the user is in a red block
+    -   A sound when the game time is over, and the user loses the game
+    -   A sound when the user wins the game
+
+### Fonts
+
+Google fonts and Font Awsome were used to style text and for icons.
 
 ## Technologies Used
-
-### Languages
 
 -   HTML
 -   CSS
 -   JavaScript
 
-### Frameworks & Tools
+### Tools
 
 -   Git
 -   GitHub
 -   Gitpod-Visual Studio Code
 -   Font Awesome
--   Chrome DevTools
+-   Chrome DevTools console
 -   Lighthouse
 -   W3C Markup validation service
 -   W3C Jigsaw CSS validation service
 -   WAVE WebAIM web accessibility evaluation tool
 -   EmailJS
+-   TinyPNG
 
 ## Features
 
-The website has 2 pages and 7 features
+The website has 2 pages.
 
 ### Header
 
@@ -163,7 +174,7 @@ The footer consists of a text logo that is the name of the game, the navigation 
 The start page gives an introduction to the game and has a start game button. When the user clicks on the start game button, the introduction box disappears, and a new window pops up and game music is played. The user can see the sound mute option, stop-watch, dice icon, and the game board behind the start window.
 
 <details><summary>Homepage start view</summary>
-<img src="docs/homepage-start.png">
+<img src="docs/game-features/homepage-start.png">
 </details>
 
 ### Game view
@@ -179,36 +190,36 @@ The start page gives an introduction to the game and has a start game button. Wh
     -   The "Well done" popup when user wins the game
 
 <details><summary>Game level selection popup</summary>
-<img src="docs/game-levels.png">
+<img src="docs/game-features/game-levels.png">
 </details>
 <details><summary>Game view basic level</summary>
-<img src="docs/game-level-basic.png">
+<img src="docs/game-features/game-level-basic.png">
 </details>
 <details><summary>Game view hard level</summary>
-<img src="docs/game-level-hard.png"">
+<img src="docs/game-features/game-level-hard.png"">
 </details>
 <details><summary>Question and answer popup</summary>
-<img src="docs/question-pupup.png">
+<img src="docs/game-features/question-pupup.png">
 </details>
 <details><summary>The congrats popup</summary>
-<img src="docs/congrats.png">
+<img src="docs/game-features/congrats.png">
 </details>
 <details><summary>The oh no! popup</summary>
-<img src="docs/ohno.png">
+<img src="docs/game-features/ohno.png">
 </details>
 
 ### Game loss popup
 
-If the game time is over before reaching the final block, the user loses t and sees a popup window and a sound, both visual and auditory clues. There is a restart button in the popup that redirects the user to the level selection section.
+If the game time is over before reaching the final block, the user loses and sees a popup window and a sound presenting visual and auditory clues, respectively. There is a restart button in the popup that redirects the user to the level selection section.
 
 <details><summary>Game loss</summary>
-<img src="docs/game-loss.png">
+<img src="docs/game-features/game-loss.png">
 </details>
 
 ### Game win popup
 
 <details><summary>Game win</summary>
-<img src="docs/game-win.png">
+<img src="docs/game-features/game-win.png">
 </details>
 
 ### Page Contact us
@@ -216,7 +227,7 @@ If the game time is over before reaching the final block, the user loses t and s
 The contact form in the page contact us, allow the user to leave feedback to the website owner.
 
 <details><summary>Contact Form</summary>
-<img src="docs/contact-us.png">
+<img src="docs/game-features/contact-us.png">
 </details>
 
 ### Form Confirmation popup
@@ -224,7 +235,7 @@ The contact form in the page contact us, allow the user to leave feedback to the
 -   When the user submits the feedback, the thank you page pops up to confirm the submission and has a button to let the user go back to the game. This part satisfies the user story (g).
 
 <details><summary>Form confirmation</summary>
-<img src="docs/thank-you.png">
+<img src="docs/game-features/thank-you.png">
 </details>
 
 ## Validation
@@ -264,7 +275,7 @@ The accessibility for users with impairment is checked by WAVE evaluation tool (
 <details><summary>Homepage</summary>
 <img src="docs/validation/accessibility-evaluation-index.jpg">
 </details>
-<details><summary>Contact</summary>
+<details><summary>Contact us</summary>
 <img src="docs/validation/accessibility-evaluation-contact.jpg">
 </details>
 
@@ -286,6 +297,7 @@ The responsive design is tested on the following devices:
 -   Samsung Galaxy S9
 -   iPhone X
 -   The website is tested using the built-in Google Chrome Developer Tools Device option for the provided devices.
+-   Am I responsive page is used to take the mockup image at different screen sizes.
 
 ### Browser Compatability
 
