@@ -4,7 +4,7 @@ Developer: Neda Keshavarzi
 
 ![Mockup image](docs/mockup.jpg)
 
-[Live webpage](https://4n4ru.github.io/CI-P2-GuessingBee/)
+[Live webpage](https://nedke.github.io/JS-PP2-The-Runner/)
 
 ## Table of Content
 
@@ -211,30 +211,20 @@ If the game time is over before reaching the final block, the user loses t and s
 <img src="docs/features/feature-correct-screen.jpg">
 </details>
 
-### Contact form
+### Page Contact us
 
--   A way for the user to provide feedback
--   User story covered 7
+The contact form in the page contact us, allow the user to leave feedback to the website owner.
 
 <details><summary>Contact Form</summary>
 <img src="docs/features/feature-contact-form.jpg">
 </details>
 
-### Form confirmation
+### Form Confirmation popup
 
--   Provides the user with feedback after the form has been submitted and a button to return to the game
--   User story covered: 6
+-   When the user submits the feedback, the thank you page pops up to confirm the submision, and has a button to let user to go back to the game.This part satisfies the user story (g).
 
 <details><summary>Form confirmation</summary>
 <img src="docs/features/feature-form-confirmation.jpg">
-</details>
-
-### 404 message
-
--   Provides the user with a way to return to the game after clicking on a broken link
-
-<details><summary>404 message</summary>
-<img src="docs/features/feature-404.jpg">
 </details>
 
 ## Validation
@@ -254,13 +244,16 @@ The HTML and CSS code is validated by W3C HTML and CSS jigsaw validation service
 
 JSHint Static Code Analysis Tool for JavaScript is used to validate the Javascript files. No significant issues found.
 
-<details><summary>game-settings.js</summary>
+<details><summary>game.js</summary>
 <img src="docs/validation/js-validation-game-settings.jpg">
 </details>
-<details><summary>guessing-be.js</summary>
+<details><summary>utilities.js</summary>
 <img src="docs/validation/js-validation-guessing-bee.jpg">
 </details>
 <details><summary>contact.js</summary>
+<img src="docs/validation/js-validation-contact.jpg">
+</details>
+<details><summary>challenges.js</summary>
 <img src="docs/validation/js-validation-contact.jpg">
 </details>
 
@@ -268,47 +261,37 @@ JSHint Static Code Analysis Tool for JavaScript is used to validate the Javascri
 
 The accessibility for users with impairment is checked by WAVE evaluation tool (https://wave.webaim.org/), and the report showed no error for all pages.
 
-<details><summary>Home</summary>
+<details><summary>Homepage</summary>
 <img src="docs/validation/accessibility-evaluation-index.jpg">
 </details>
 <details><summary>Contact</summary>
 <img src="docs/validation/accessibility-evaluation-contact.jpg">
-</details>
-<details><summary>404</summary>
-<img src="docs/validation/accessibility-evaluation-404.jpg">
 </details>
 
 ### Performance
 
 The accessibility and performance is tested by the Lighthouse for mobile and desktop.
 
-<details><summary>Home</summary>
+<details><summary>Homepage</summary>
 <img src="docs/validation/performance-lighthouse-index.jpg">
 </details>
 <details><summary>Contact</summary>
 <img src="docs/validation/performance-lighthouse-contact.jpg">
 </details>
-<details><summary>404</summary>
-<img src="docs/validation/performance-lighthouse-404.jpg">
-</details>
 
-### Performing tests on various devices
+### Responsive
 
-The website was tested on the following devices:
+The responsive design is tested on the following devices:
 
--   Lenovo Yoga 2 Pro (both in pc and tablet mode)
--   Honor 20 pro
--   Xiaomi Redmi Note 7
-
-In addition, the website was tested using the Google Chrome Developer Tools Device Toggling option for all available device options.
+-   Samsung Galaxy S9
+-   iPhone X
+-   The website is tested using the built-in Google Chrome Developer Tools Device option for the provided devices.
 
 ### Browser Compatability
 
 The website was tested on the following browsers:
 
 -   Google Chrome
--   Mozilla Firefox
--   Microsoft Edge
 
 ### Testing user stories
 
@@ -340,7 +323,7 @@ You can clone the repository by following these steps:
 
 1. Go to the GitHub repository
 2. Locate the Code button above the list of files and click it
-3. Select if you prefer to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL to your clipboard
+3. Select if you prefer to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL
 4. Open Git Bash
 5. Change the current working directory to the one where you want the cloned directory
 6. Type git clone and paste the URL from the clipboard (\$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
