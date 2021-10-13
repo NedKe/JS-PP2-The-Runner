@@ -251,23 +251,6 @@ The HTML and CSS code is validated by W3C HTML (https://validator.w3.org/) and C
 <img src="docs/validations/css-jigsaw.png">
 </details>
 
-### JavaScript Validation
-
-JSHint Static Code Analysis Tool for JavaScript is used to validate the Javascript files. No significant issues found.
-
-<details><summary>game.js</summary>
-<img src="docs/validation/js-validation-game-settings.jpg">
-</details>
-<details><summary>utilities.js</summary>
-<img src="docs/validation/js-validation-guessing-bee.jpg">
-</details>
-<details><summary>contact.js</summary>
-<img src="docs/validation/js-validation-contact.jpg">
-</details>
-<details><summary>challenges.js</summary>
-<img src="docs/validation/js-validation-contact.jpg">
-</details>
-
 ### Accessibility
 
 The accessibility for users with impairment is checked by WAVE evaluation tool (https://wave.webaim.org/), and the report showed no error for all pages.
@@ -315,8 +298,6 @@ The responsive design is tested on the following devices:
 The website was tested on the following browsers:
 
 -   Google Chrome
-
-### Testing user stories
 
 ## Bugs
 
