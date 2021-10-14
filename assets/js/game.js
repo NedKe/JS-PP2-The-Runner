@@ -24,6 +24,7 @@ const lostSound = new sound("assets/music/lost.wav", false);
 const winSound = new sound("assets/music/win.wav", false);
 const successSound = new sound("assets/music/success.wav");
 const failureSound = new sound("assets/music/invalid.wav");
+const diceSound = new sound("assets/music/dice.mp3", false);
 
 const gameDuration = 120;
 let gameTime;
@@ -75,6 +76,7 @@ function changeDice(diceValue) {
 function initializeEventListeners() {
     // Event listener on the dice icon to handle the click
     dice.addEventListener("click", function() {
+        diceSound.play();
         const randomValue = toss();
         changeDice(`fa-dice-${convertDigitToCharacter(randomValue)}`);
         move(randomValue);
