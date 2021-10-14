@@ -106,17 +106,17 @@ The website is designed based on the idea from the classic snake and ladder game
 
     -   pop up giving the option to pick up the game level
     -   pop up showing questions and answers
-    -   congrats message and a sound popping up when the answer is correct
-    -   OH NO! message and a sound popping up when the answer is incorrect
-    -   You lost message and a sound popping up when the game time is over
-    -   Well done message and a sound popping up when the user wins the game
+    -   congrats message popping up when the answer is correct
+    -   OH NO! message popping up when the answer is incorrect
+    -   You lost message popping up when the game time is over
+    -   Well done message popping up when the user wins the game
 
 -   The page contact us contains a form that allows the user to submit feedback to the website owner.
     -   A thank you popup shows up after submitting the feedback.
 
 ### Sounds
 
--   When the user starts the game, the following sounds play:
+-   When the user starts the game, the following sounds play which staisfies user story (h):
 
     -   Background music is played, when the game starts. The user can mute the music by clicking on the speaker at the top left of the game.
     -   A dice sound when the user clicks on the dice
@@ -133,7 +133,7 @@ The website is designed based on the idea from the classic snake and ladder game
 
 Google fonts and Font Awsome were used to style text and for icons.
 
-## Technologies Used
+## Technologies
 
 -   HTML
 -   CSS
@@ -159,7 +159,7 @@ The website has 2 pages. A homepage where the game and its features are presente
 
 ### Footer
 
-The footer consists of a text logo that is the name of the game, the navigation menu, and social media links. The footer design satisfies the points mentioned in user (h) and website owner stories (j).
+The footer consists of a text logo that is the name of the game, the navigation menu, and social media links. The footer design satisfies the points mentioned in user (g) and website owner stories (j).
 
 <details><summary>Footer</summary>
 <img src="docs/game-features/footer.png">
@@ -176,12 +176,12 @@ The start page gives an introduction to the game and has a start game button. Wh
 ### Game view
 
 -   Consisting of 8 featured views that address user stories f and i:
-    -   The game level option popup window
+    -   The game level option popup window (user story (b))
     -   The game board populated with basic level challenges
     -   The game board populated with hard level challenges
-    -   Question and answer popup when arriving at blocks with a question mark
-    -   The congrats popup when the correct answer is submitted
-    -   The OH No pop up when an incorrect answer is submitted
+    -   Question and answer popup when arriving at blocks with a question mark (user story (c))
+    -   The congrats popup when the correct answer is submitted (user story (e))
+    -   The OH No pop up when an incorrect answer is submitted (user story (e))
     -   The "You lost" popup when game time is over, and the user lost the game
     -   The "Well done" popup when user wins the game
 
@@ -220,7 +220,7 @@ If the game time is over before reaching the final block, the user loses and see
 
 ### Page Contact us
 
-The contact form in the page contact us, allow the user to leave feedback to the website owner.
+The contact form in the page contact us, allow the user to leave feedback to the website owner.This part satisfies the user story (f).
 
 <details><summary>Contact Form</summary>
 <img src="docs/game-features/contact-us.png">
@@ -228,7 +228,7 @@ The contact form in the page contact us, allow the user to leave feedback to the
 
 ### Form Confirmation popup
 
-When the user submits the feedback, the thank you page pops up to confirm the submission. This part satisfies the user story (g).
+When the user submits the feedback, the thank you page pops up to confirm the submission. This part satisfies the user story (f).
 
 <details><summary>Form confirmation</summary>
 <img src="docs/game-features/thank-you.png">
