@@ -230,7 +230,7 @@ The contact form in the page contact us, allow the user to leave feedback to the
 
 ### Form Confirmation popup
 
--   When the user submits the feedback, the thank you page pops up to confirm the submission. This part satisfies the user story (g).
+When the user submits the feedback, the thank you page pops up to confirm the submission. This part satisfies the user story (g).
 
 <details><summary>Form confirmation</summary>
 <img src="docs/game-features/thank-you.png">
