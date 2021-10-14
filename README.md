@@ -13,7 +13,7 @@ Developer: Neda Keshavarzi
     2. [Website owner objectives](#website-owner-objectives)
 2. [User Experience](#user-experience)
     1. [Target group](#target-group)
-    2. [User Demands](#user-Demands)
+    2. [User Demands](#user-demands)
     3. [User Stories](#user-stories)
     4. [Website Owner Stories](#website-owner-stories)
 3. [Design](#design)
@@ -77,22 +77,22 @@ The runner game is similar to the snake and ladder game that is based on reward 
 
 As a user, I want to,
 
-(a) Be able to play a board game with a nice interface
-(b) Be able to pick up the level of the game
-(d) Test my knowledge by answering fact-based questions
-(e) Want to challenge me by not being presented with the correct answer to the questions but prefer learning the answer myself
-(f) Get feedback on my correct and incorrect answers and when I win or lose
-(g) Be able to send feedback to the website owner and receive confirmation that my feedback is sent
-(h) Easily navigate to different pages and access sicial media networks
-(i) To have some auditory clues and alerts when actions happen in the game
+-   (a) Be able to play a board game with a nice interface
+-   (b) Be able to pick up the level of the game
+-   (d) Test my knowledge by answering fact-based questions
+-   (e) Want to challenge me by not being presented with the correct answer to the questions but prefer learning the answer myself
+-   (f) Get feedback on my correct and incorrect answers and when I win or lose
+-   (g) Be able to send feedback to the website owner and receive confirmation that my feedback is sent
+-   (h) Easily navigate to different pages and access sicial media networks
+-   (i) To have some auditory clues and alerts when actions happen in the game
 
 ### Website Owner Stories
 
 As As the creator of the website I want users to,
 
-(j) Give us feedback about any technical problems or recommend us with new ideas to improve the game
-(k) Follow us on social media networks
-(l) Learn from the asked questions by replaying the game, in this way, they can build up knowledge and play a fun game!
+-   (j) Give us feedback about any technical problems or recommend us with new ideas to improve the game
+-   (k) Follow us on social media networks
+-   (l) Learn from the asked questions by replaying the game, in this way, they can build up knowledge and play a fun game!
 
 ## Design
 
