@@ -12,7 +12,6 @@ emailjs.init("user_e5KWs7tkBUcUHRZ9K8fAt");
  */
 form.addEventListener("submit", function(event) {
     event.preventDefault();
-    console.log(form.querySelector("#name").value);
     emailjs
         .send("service_vhlc8f5", "template_k9s8pwo", {
             name: form.querySelector("#name").value,
