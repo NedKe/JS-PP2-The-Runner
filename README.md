@@ -79,20 +79,20 @@ As a user, I want to,
 
 -   (a) Be able to play a board game with a nice interface
 -   (b) Be able to pick up the level of the game
--   (d) Test my knowledge by answering fact-based questions
--   (e) Want to challenge me by not being presented with the correct answer to the questions but prefer learning the answer myself
--   (f) Get feedback on my correct and incorrect answers and when I win or lose
--   (g) Be able to send feedback to the website owner and receive confirmation that my feedback is sent
--   (h) Easily navigate to different pages and access sicial media networks
--   (i) To have some auditory clues and alerts when actions happen in the game
+-   (c) Test my knowledge by answering fact-based questions
+-   (d) Want to challenge me by not being presented with the correct answer to the questions but prefer learning the answer myself
+-   (e) Get feedback on my correct and incorrect answers and when I win or lose
+-   (f) Be able to send feedback to the website owner and receive confirmation that my feedback is sent
+-   (g) Easily navigate to different pages and access sicial media networks
+-   (h) To have some auditory clues and alerts when actions happen in the game
 
 ### Website Owner Stories
 
 As As the creator of the website I want users to,
 
--   (j) Give us feedback about any technical problems or recommend us with new ideas to improve the game
--   (k) Follow us on social media networks
--   (l) Learn from the asked questions by replaying the game, in this way, they can build up knowledge and play a fun game!
+-   (i) Give us feedback about any technical problems or recommend us with new ideas to improve the game
+-   (j) Follow us on social media networks
+-   (k) Learn from the asked questions by replaying the game, in this way, they can build up knowledge and play a fun game!
 
 ## Design
 
@@ -155,11 +155,7 @@ Google fonts and Font Awsome were used to style text and for icons.
 
 ## Features
 
-The website has 2 pages.
-
-### Header
-
-The header is skipped in this website to make more room for the game board. When the page loads, there is a welcome box that refers to the game name.
+The website has 2 pages. A homepage where the game and its features are presented there and a contact page. The header is skipped in this website to make more room for the game board. When the page loads, there is a welcome box that refers to the game name.
 
 ### Footer
 
