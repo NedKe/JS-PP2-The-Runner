@@ -260,6 +260,16 @@ The accessibility for users with impairment is checked by WAVE evaluation tool (
 <img src="docs/validations/accessibility-contact.png">
 </details>
 
+### JavaScript
+
+No errors were found when passing through the official Jshint validator
+
+-   The following metrics were returned:
+-   There are 11 functions in this file.
+-   Function with the largest signature takes 2 arguments, while the median is 0.
+-   Largest function has 10 statements in it, while the median is 3.
+-   The most complex function has a cyclomatic complexity value of 4 while the median is 2.
+
 ### Performance
 
 The accessibility and performance is tested by the Lighthouse for mobile and desktop. No significant error was found.
@@ -343,7 +353,7 @@ You can clone the repository by following these steps:
 ### Media content
 
 -   Images
--   Background image is taken from
+    -   Background image is taken from https://www.freepik.com/free-psd/time-play-mock-up-smiley-girl_9261455.htm
 -   Musics
     -   Background music is Monkeys Spinning by Kevin MacLeod, taken from
         https://www.chosic.com/free-music/all/?keyword=Monkeys%20Spinning
