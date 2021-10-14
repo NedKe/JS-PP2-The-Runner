@@ -135,6 +135,8 @@ Google fonts and Font Awsome were used to style text and for icons.
 
 ## Technologies
 
+### Programing languages
+
 -   HTML
 -   CSS
 -   JavaScript
