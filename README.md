@@ -164,7 +164,7 @@ The header is skipped in this website to make more room for the game board. When
 The footer consists of a text logo that is the name of the game, the navigation menu, and social media links. The footer design satisfies the points mentioned in user (h) and website owner stories (j).
 
 <details><summary>Footer</summary>
-<img src="docs/footer.png">
+<img src="docs/game-features/footer.png">
 </details>
 
 ### Homepage start view
@@ -230,7 +230,7 @@ The contact form in the page contact us, allow the user to leave feedback to the
 
 ### Form Confirmation popup
 
--   When the user submits the feedback, the thank you page pops up to confirm the submission and has a button to let the user go back to the game. This part satisfies the user story (g).
+-   When the user submits the feedback, the thank you page pops up to confirm the submission. This part satisfies the user story (g).
 
 <details><summary>Form confirmation</summary>
 <img src="docs/game-features/thank-you.png">
@@ -293,9 +293,7 @@ The responsive design is tested on the following devices:
 
 ### Browser Compatability
 
-The website was tested on the following browsers:
-
--   Google Chrome
+The website was tested on Google Chrome.
 
 ## Bugs
 
@@ -345,10 +343,11 @@ You can clone the repository by following these steps:
 ### Media content
 
 -   Images
+-   Background image is taken from
 -   Musics
--   Background music is Monkeys Spinning by Kevin MacLeod, taken from
-    https://www.chosic.com/free-music/all/?keyword=Monkeys%20Spinning
--   The game sound popups are taken from https://freesound.org/
+    -   Background music is Monkeys Spinning by Kevin MacLeod, taken from
+        https://www.chosic.com/free-music/all/?keyword=Monkeys%20Spinning
+    -   The game sound popups are taken from https://freesound.org/
 -   Social media and the runner icon
     -   The social media icons are from Font Awesome
 
