@@ -262,13 +262,17 @@ The accessibility for users with impairment is checked by WAVE evaluation tool (
 
 ### JavaScript
 
-No errors were found when passing through the official Jshint validator
+The javaScript files are tested by JSHint Static Code Analysis Tool on https://jshint.com/. No significant error was detected, and the reports are attached as follow:
 
--   The following metrics were returned:
--   There are 11 functions in this file.
--   Function with the largest signature takes 2 arguments, while the median is 0.
--   Largest function has 10 statements in it, while the median is 3.
--   The most complex function has a cyclomatic complexity value of 4 while the median is 2.
+<details><summary>game.js</summary>
+<img src="docs/validations/game-js.png">
+</details>
+<details><summary>utilities.js</summary>
+<img src="docs/validations/utilities-js.png">
+</details>
+<details><summary>contact.js</summary>
+<img src="docs/validations/contact-js.png">
+</details>
 
 ### Performance
 
