@@ -29,9 +29,10 @@ Developer: Neda Keshavarzi
     1. [HTML Validation](#HTML-validation)
     2. [CSS Validation](#CSS-validation)
     3. [Accessibility](#accessibility)
-    4. [Performance](#performance)
-    5. [Responsivness](#responsivness)
-    6. [Browser compatibility](#browser-compatability)
+    4. [JavaScript](#java-script)
+    5. [Performance](#performance)
+    6. [Responsivness](#responsivness)
+    7. [Browser compatibility](#browser-compatability)
 7. [Bugs](#Bugs)
 8. [Deployment](#deployment)
     1. [EmailJS API](#emailjs-api)
@@ -118,7 +119,8 @@ The website is designed based on the idea from the classic snake and ladder game
 -   When the user starts the game, the following sounds play:
 
     -   Background music is played, when the game starts. The user can mute the music by clicking on the speaker at the top left of the game.
-    -   A walk sound when dice rolls and the user starts running
+    -   A dice sound when the user clicks on the dice
+    -   A walk sound when the user starts running
     -   A sound alert when the user is in a question block
     -   A sound alert when the user submits a correct answer
     -   A sound alert when the user submits an incorrect answer
